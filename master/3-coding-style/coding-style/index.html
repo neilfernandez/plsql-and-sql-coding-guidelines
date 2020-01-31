@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/3-coding-style/coding-style/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/3-coding-style/coding-style/">
       
       
       
@@ -98,9 +98,9 @@
     <nav class="md-header-nav md-grid">
       <div class="md-flex">
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
+          <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../images/trivadis-logo.svg" height="21">
+              <img src="../../images/insum-logo.png" height="31">
             
           </a>
         </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
             </div>
@@ -192,9 +192,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
+    <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../images/trivadis-logo.svg" width="48" height="48">
+        <img src="../../images/insum-logo.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
     </div>
@@ -326,8 +326,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#conventions" class="md-nav__link">
-    Conventions
+  <a href="#commenting-goals" class="md-nav__link">
+    Commenting Goals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-version-function" class="md-nav__link">
+    Package Version Function
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-spec" class="md-nav__link">
+    Package Spec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-body" class="md-nav__link">
+    Package Body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commenting-conventions" class="md-nav__link">
+    Commenting Conventions
   </a>
   
 </li>
@@ -418,8 +452,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4-language-usage/1-general/g-1020/" title="G-1020: Always have a matching loop or block label." class="md-nav__link">
-      G-1020: Always have a matching loop or block label.
+    <a href="../../4-language-usage/1-general/g-1020/" title="G-1020: Have a matching loop or block label." class="md-nav__link">
+      G-1020: Have a matching loop or block label.
     </a>
   </li>
 
@@ -442,8 +476,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4-language-usage/1-general/g-1040/" title="G-1040: Avoid dead code." class="md-nav__link">
-      G-1040: Avoid dead code.
+    <a href="../../4-language-usage/1-general/g-1040/" title="G-1040: Always avoid dead code." class="md-nav__link">
+      G-1040: Always avoid dead code.
     </a>
   </li>
 
@@ -670,18 +704,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../4-language-usage/2-variables-and-types/2-numeric-data-types/g-2210/" title="G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision." class="md-nav__link">
-      G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision.
-    </a>
-  </li>
-
         
           
           
@@ -1003,6 +1025,18 @@
   <li class="md-nav__item">
     <a href="../../4-language-usage/3-dml-and-sql/1-general/g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-nav__link">
       G-3190: Avoid using NATURAL JOIN.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4-language-usage/3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+      G-3200: Never use an ON clause when USING will work.
     </a>
   </li>
 
@@ -1414,8 +1448,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4-language-usage/5-exception-handling/g-5010/" title="G-5010: Try to use a error/logging framework for your application." class="md-nav__link">
-      G-5010: Try to use a error/logging framework for your application.
+    <a href="../../4-language-usage/5-exception-handling/g-5010/" title="G-5010: Always use an error/logging framework for your application." class="md-nav__link">
+      G-5010: Always use an error/logging framework for your application.
     </a>
   </li>
 
@@ -1715,6 +1749,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4-language-usage/7-stored-objects/2-packages/g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link">
+      G-7250: Always use NOCOPY when appropriate
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1939,6 +1985,30 @@
   <li class="md-nav__item">
     <a href="../../4-language-usage/7-stored-objects/7-triggers/g-7710/" title="G-7710: Avoid cascading triggers." class="md-nav__link">
       G-7710: Avoid cascading triggers.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4-language-usage/7-stored-objects/7-triggers/g-7720/" title="G-7720: Avoid triggers for business logic" class="md-nav__link">
+      G-7720: Avoid triggers for business logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4-language-usage/7-stored-objects/7-triggers/g-7730/" title="G-7730: If using triggers, use compound triggers" class="md-nav__link">
+      G-7730: If using triggers, use compound triggers
     </a>
   </li>
 
@@ -2234,30 +2304,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../7-tool-support/tool-support/" title="Tool Support" class="md-nav__link">
-      Tool Support
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
-      Appendix
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2314,8 +2360,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#conventions" class="md-nav__link">
-    Conventions
+  <a href="#commenting-goals" class="md-nav__link">
+    Commenting Goals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-version-function" class="md-nav__link">
+    Package Version Function
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-spec" class="md-nav__link">
+    Package Spec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-body" class="md-nav__link">
+    Package Body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commenting-conventions" class="md-nav__link">
+    Commenting Conventions
   </a>
   
 </li>
@@ -2369,11 +2449,11 @@
 <tbody>
 <tr>
 <td align="center">1</td>
-<td>Keywords are written uppercase, names are written in lowercase.</td>
+<td>All code is written in lowercase.</td>
 </tr>
 <tr>
 <td align="center">2</td>
-<td>3 space indention<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>.</td>
+<td>3 space indention.</td>
 </tr>
 <tr>
 <td align="center">3</td>
@@ -2381,7 +2461,7 @@
 </tr>
 <tr>
 <td align="center">4</td>
-<td>Keywords <code>LOOP</code>, <code>ELSE</code>, <code>ELSIF</code>, <code>END IF</code>, <code>WHEN</code> on a new line.</td>
+<td>Keywords <code>loop</code>, <code>else</code>, <code>elseif</code>, <code>end if</code>, <code>when</code> on a new line.</td>
 </tr>
 <tr>
 <td align="center">5</td>
@@ -2406,37 +2486,81 @@
 </tbody>
 </table>
 <h3 id="example">Example</h3>
-<pre><code>PROCEDURE set_salary(in_employee_id IN employees.employee_id%TYPE) IS
-   CURSOR c_employees(p_employee_id IN employees.employee_id%TYPE) IS 
-      SELECT last_name
+<pre><code class="sql">procedure set_salary(in_employee_id IN employee.employee_id%type) is
+   cursor c_employee(p_employee_id IN employee.employee_id%type) is 
+      select last_name
             ,first_name
             ,salary
-        FROM employees
-       WHERE employee_id = p_employee_id
-       ORDER BY last_name
-               ,first_name;
+        from employee
+       where employee_id = p_employee_id
+    order by last_name
+            ,first_name;
 
-   r_employee     c_employees%ROWTYPE;
-   l_new_salary   employees.salary%TYPE;
-BEGIN
-   OPEN  c_employees(p_employee_id =&gt; in_employee_id);
-   FETCH c_employees INTO r_employee;
-   CLOSE c_employees;
+   r_employee     c_employee%rowtype;
+   l_new_salary   employee.salary%type;
+begin
+   open  c_employee(p_employee_id =&gt; in_employee_id);
+   fetch c_employee INTO r_employee;
+   close c_employee;
 
    new_salary (in_employee_id =&gt; in_employee_id
               ,out_salary     =&gt; l_new_salary);
 
    -- Check whether salary has changed
-   IF r_employee.salary &lt;&gt; l_new_salary THEN
-      UPDATE employees
-         SET salary = l_new_salary
-       WHERE employee_id = in_employee_id;
-   END IF;
-END set_salary;
+   if r_employee.salary &lt;&gt; l_new_salary then
+      update employee
+         set salary = l_new_salary
+       where employee_id = in_employee_id;
+   end if;
+end set_salary;
 </code></pre>
 
 <h2 id="code-commenting">Code Commenting</h2>
-<h3 id="conventions">Conventions</h3>
+<h3 id="commenting-goals">Commenting Goals</h3>
+<p>Code comments are there to help future readers of the code (there is a good chance that future reader is you... Any code that you wrote six months to a year ago might as well have been written by someone else) understand how to use the code (especially in PL/SQL package specs) and how to maintain the code (especially in PL/SQL package bodies).</p>
+<h3 id="package-version-function">Package Version Function</h3>
+<p>Each package should have a package_version function that returns a varchar2.</p>
+<h4 id="package-spec">Package Spec</h4>
+<pre><code>--This function returns the version number of the package using the following rules:
+-- 1. If there is a major change that impacts multiple packages, increment the first digit, e.g. 03.05.09 -&gt; 04.00.00
+-- 2. If there is a change to the package spec, increment the first dot, e.g. 03.02.05 -&gt; 03.03.00
+-- 3. If there is a minor change, only to the package body, increment the last dot e.g. 03.02.05 -&gt; 03.02.06
+-- 4. If the function returns a value ending in WIP, then the package is actively being worked on by a developer.
+function package_version return varchar2;
+</code></pre>
+
+<h4 id="package-body">Package Body</h4>
+<pre><code>-- Increment the version number based upon the following rules
+-- 1. If there is a major change that impacts multiple packages, increment the first digit, e.g. 03.05.09 -&gt; 04.00.00
+-- 2. If there is a change to the package spec, increment the first dot, e.g. 03.02.05 -&gt; 03.03.00
+-- 3. If there is a minor change, only to the package body, increment the last dot e.g. 03.02.05 -&gt; 03.02.06
+-- 4. If a developer begins work on a package, increment the comment version and include the words 'IN PROGRESS' in 
+--    the new version line. Increment the return value and add WIP to the return value. Example:  return '01.00.01 WIP'  
+--    And then IMMEDIATELY push/commit &amp; compile the package.
+--   As you are working on the package and make updates to lines, use the version number at the end of the line to indicate when 
+--  the line was changed. Example: l_person := 'Bob';  -- 01.00.01 Bob is the new person, was Joe.
+-- 5. Once work is complete, remove 'IN PROGRESS' from the comment and remove WIP from the return value.
+-- 6. If your work crosses the boundary of a sprint, having WIP in the return value will indicate that the package should not be promoted.
+function package_version return varchar2
+is
+begin
+  -- 01.00.00 YYYY-MM-DD First &amp; Last Name  Initial Version
+  -- 01.00.01 YYYY-MM-DD First &amp; Last Name  Fixed issue number 72 documented in Jira ticket 87: https://ourjiraurl.com/f?p=87
+   return '01.00.01' ;
+end package_version;
+</code></pre>
+
+<p>Some notes on the above: We are computer scientists, we write dates as YYYY-MM-DD, not DD-MON-RR or MON-DD-YYYY or any other way.</p>
+<p>If you are in the middle of an update, then the function would look like this:</p>
+<pre><code>[snip]
+  -- 01.00.00 YYYY-MM-DD First &amp; Last Name  Initial Version
+  -- 01.00.01 YYYY-MM-DD First &amp; Last Name  Fixed issue documented in Jira ticket 87: https://ourjiraurl.com/f?p=87
+  -- 01.00.02 2019-10-25 Rich Soule         IN PROGRESS Fixing issue documented in Jira ticket 90: https://ourjiraurl.com/f?p=90
+   return '01.00.02 WIP' ;
+end package_version;
+</code></pre>
+
+<h3 id="commenting-conventions">Commenting Conventions</h3>
 <p>Inside a program unit only use the line commenting technique <code>--</code> unless you temporarly deactivate code sections for testing.</p>
 <p>To comment the source code for later document generation, comments like <code>/** ... */</code> are used. Within these documentation comments, tags may be used to define the documentation structure.</p>
 <p>Tools like ORACLE SQL Developer or PL/SQL Developer include documentation functionality based on a javadoc-like tagging. </p>
@@ -2463,7 +2587,7 @@ END set_salary;
 <tr>
 <td><code>throws</code></td>
 <td>Describe errors that may be raised by the program unit.</td>
-<td><code>@throws NO_DATA_FOUND</code></td>
+<td><code>@throws no_data_found</code></td>
 </tr>
 </tbody>
 </table>
@@ -2478,27 +2602,11 @@ Check whether we passed a valid sql name
 
 &lt;b&gt;Call Example:&lt;/b&gt;
 &lt;pre&gt;
-   SELECT TVDAssert.valid_sql_name('TEST') from dual;
-   SELECT TVDAssert.valid_sql_name('123') from dual
+   select tvdassert.valid_sql_name('TEST') from dual;
+   SELECT tvdassert.valid_sql_name('123') from dual
 &lt;/pre&gt;
 */
 </code></pre>
-
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:2">
-<p>Tabs are not used because the indentation depends on the editor configuration. 
-We want to ensure that the code looks the same, indepenent of the editor used. 
-Hence, no tabs. But why not use 8 spaces? That's the traditional value for a tab. 
-When writing a package function the code in the body has an indentation of 3. 
-That's 24 characters as a starting point for the code. We think it's too much. 
-Especially if we try to keep a line below 100 or 80 characters. Other good options 
-would be 2 or 4 spaces. We settled for 3 spaces as a compromise. 
-The indentation is still good visible, but does not use to much space.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
                 
                   
                 
@@ -2565,9 +2673,9 @@ The indentation is still good visible, but does not use to much space.&#160;<a c
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Trivadis" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/insum-labs" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/trivadis" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/insumsolutions" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

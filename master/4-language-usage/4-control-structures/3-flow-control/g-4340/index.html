@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/4-language-usage/4-control-structures/3-flow-control/g-4340/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/4-language-usage/4-control-structures/3-flow-control/g-4340/">
       
       
       
@@ -98,9 +98,9 @@
     <nav class="md-header-nav md-grid">
       <div class="md-flex">
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
+          <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/trivadis-logo.svg" height="21">
+              <img src="../../../../images/insum-logo.png" height="31">
             
           </a>
         </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
             </div>
@@ -192,9 +192,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
+    <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/trivadis-logo.svg" width="48" height="48">
+        <img src="../../../../images/insum-logo.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
     </div>
@@ -328,8 +328,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1020/" title="G-1020: Always have a matching loop or block label." class="md-nav__link">
-      G-1020: Always have a matching loop or block label.
+    <a href="../../../1-general/g-1020/" title="G-1020: Have a matching loop or block label." class="md-nav__link">
+      G-1020: Have a matching loop or block label.
     </a>
   </li>
 
@@ -352,8 +352,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1040/" title="G-1040: Avoid dead code." class="md-nav__link">
-      G-1040: Avoid dead code.
+    <a href="../../../1-general/g-1040/" title="G-1040: Always avoid dead code." class="md-nav__link">
+      G-1040: Always avoid dead code.
     </a>
   </li>
 
@@ -580,18 +580,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/2-numeric-data-types/g-2210/" title="G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision." class="md-nav__link">
-      G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision.
-    </a>
-  </li>
-
         
           
           
@@ -913,6 +901,18 @@
   <li class="md-nav__item">
     <a href="../../../3-dml-and-sql/1-general/g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-nav__link">
       G-3190: Avoid using NATURAL JOIN.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+      G-3200: Never use an ON clause when USING will work.
     </a>
   </li>
 
@@ -1380,8 +1380,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Try to use a error/logging framework for your application." class="md-nav__link">
-      G-5010: Try to use a error/logging framework for your application.
+    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Always use an error/logging framework for your application." class="md-nav__link">
+      G-5010: Always use an error/logging framework for your application.
     </a>
   </li>
 
@@ -1681,6 +1681,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/2-packages/g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link">
+      G-7250: Always use NOCOPY when appropriate
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1905,6 +1917,30 @@
   <li class="md-nav__item">
     <a href="../../../7-stored-objects/7-triggers/g-7710/" title="G-7710: Avoid cascading triggers." class="md-nav__link">
       G-7710: Avoid cascading triggers.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7720/" title="G-7720: Avoid triggers for business logic" class="md-nav__link">
+      G-7720: Avoid triggers for business logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7730/" title="G-7730: If using triggers, use compound triggers" class="md-nav__link">
+      G-7730: If using triggers, use compound triggers
     </a>
   </li>
 
@@ -2200,30 +2236,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../7-tool-support/tool-support/" title="Tool Support" class="md-nav__link">
-      Tool Support
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
-      Appendix
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2288,47 +2300,46 @@
 <p>Maintainability</p>
 </div>
 <h2 id="reason">Reason</h2>
-<p>It is easier for the reader to see, that the complete array is processed.</p>
-<p>Since an <code>EXIT</code> statement is similar to a <code>GOTO</code> statement, 
-it should be avoided, whenever possible.</p>
+<p>It is easier for the reader to see that the complete array is processed.</p>
+<p>Since an <code>exit</code> statement is similar to a <code>goto</code> statement, it should be avoided whenever possible.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code>DECLARE
-   TYPE t_employee_type IS VARRAY(10) OF employees.employee_id%TYPE;
+<pre><code class="sql">declare
+   type t_employee_type is varray(10) of employee.employee_id%type;
    t_employees t_employee_type;
-   co_himuro     CONSTANT INTEGER := 118;
-   co_livingston CONSTANT INTEGER := 177;
-   co_min_value  CONSTANT SIMPLE_INTEGER := 1;
-   co_increment  CONSTANT SIMPLE_INTEGER := 1;
-   i PLS_INTEGER;
-BEGIN
-   t_employees := t_employee_type(co_himuro, co_livingston);
-   i           := co_min_value;
+   k_himuro     constant integer := 118;
+   k_livingston constant integer := 177;
+   k_min_value  constant simple_integer := 1;
+   k_increment  constant simple_integer := 1;
+   i pls_integer;
+begin
+   t_employees := t_employee_type(k_himuro, k_livingston);
+   i           := k_min_value;
 
    &lt;&lt;process_employees&gt;&gt;
-   LOOP
-      EXIT process_employees WHEN i &gt; t_employees.COUNT();
+   loop
+      exit process_employees when i &gt; t_employees.count();
       sys.dbms_output.put_line(t_employees(i));
-      i := i + co_increment;
-   END LOOP process_employees;
-END;
+      i := i + k_increment;
+   end loop process_employees;
+end;
 /
 </code></pre>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code>DECLARE
-   TYPE t_employee_type IS VARRAY(10) OF employees.employee_id%TYPE;
+<pre><code class="sql">declare
+   type t_employee_type is varray(10) of employees.employee_id%type;
    t_employees t_employee_type;
-   co_himuro     CONSTANT INTEGER := 118;
-   co_livingston CONSTANT INTEGER := 177;
-BEGIN
-   t_employees := t_employee_type(co_himuro, co_livingston);
+   k_himuro     constant integer := 118;
+   k_livingston constant integer := 177;
+begin
+   t_employees := t_employee_type(k_himuro, k_livingston);
 
    &lt;&lt;process_employees&gt;&gt;
-   FOR i IN 1..t_employees.COUNT()
-   LOOP
+   for i in 1..t_employees.count()
+   loop
      sys.dbms_output.put_line(t_employees(i));
-   END LOOP process_employees;
-END;
+   end loop process_employees;
+end;
 /
 </code></pre>
                 
@@ -2397,9 +2408,9 @@ END;
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Trivadis" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/insum-labs" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/trivadis" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/insumsolutions" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

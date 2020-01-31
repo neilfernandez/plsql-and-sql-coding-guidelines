@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/4-language-usage/4-control-structures/3-flow-control/g-4310/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/4-language-usage/4-control-structures/3-flow-control/g-4310/">
       
       
       
@@ -98,9 +98,9 @@
     <nav class="md-header-nav md-grid">
       <div class="md-flex">
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
+          <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/trivadis-logo.svg" height="21">
+              <img src="../../../../images/insum-logo.png" height="31">
             
           </a>
         </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
             </div>
@@ -192,9 +192,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
+    <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/trivadis-logo.svg" width="48" height="48">
+        <img src="../../../../images/insum-logo.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
     </div>
@@ -328,8 +328,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1020/" title="G-1020: Always have a matching loop or block label." class="md-nav__link">
-      G-1020: Always have a matching loop or block label.
+    <a href="../../../1-general/g-1020/" title="G-1020: Have a matching loop or block label." class="md-nav__link">
+      G-1020: Have a matching loop or block label.
     </a>
   </li>
 
@@ -352,8 +352,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1040/" title="G-1040: Avoid dead code." class="md-nav__link">
-      G-1040: Avoid dead code.
+    <a href="../../../1-general/g-1040/" title="G-1040: Always avoid dead code." class="md-nav__link">
+      G-1040: Always avoid dead code.
     </a>
   </li>
 
@@ -580,18 +580,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/2-numeric-data-types/g-2210/" title="G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision." class="md-nav__link">
-      G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision.
-    </a>
-  </li>
-
         
           
           
@@ -913,6 +901,18 @@
   <li class="md-nav__item">
     <a href="../../../3-dml-and-sql/1-general/g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-nav__link">
       G-3190: Avoid using NATURAL JOIN.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+      G-3200: Never use an ON clause when USING will work.
     </a>
   </li>
 
@@ -1387,8 +1387,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Try to use a error/logging framework for your application." class="md-nav__link">
-      G-5010: Try to use a error/logging framework for your application.
+    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Always use an error/logging framework for your application." class="md-nav__link">
+      G-5010: Always use an error/logging framework for your application.
     </a>
   </li>
 
@@ -1688,6 +1688,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/2-packages/g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link">
+      G-7250: Always use NOCOPY when appropriate
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1912,6 +1924,30 @@
   <li class="md-nav__item">
     <a href="../../../7-stored-objects/7-triggers/g-7710/" title="G-7710: Avoid cascading triggers." class="md-nav__link">
       G-7710: Avoid cascading triggers.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7720/" title="G-7720: Avoid triggers for business logic" class="md-nav__link">
+      G-7720: Avoid triggers for business logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7730/" title="G-7730: If using triggers, use compound triggers" class="md-nav__link">
+      G-7730: If using triggers, use compound triggers
     </a>
   </li>
 
@@ -2207,30 +2243,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../7-tool-support/tool-support/" title="Tool Support" class="md-nav__link">
-      Tool Support
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
-      Appendix
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2302,100 +2314,98 @@
 <p>Maintainability, Testability</p>
 </div>
 <h2 id="reason">Reason</h2>
-<blockquote>
-<p>Code containing gotos is hard to format. Indentation should be used to show logical structure, and gotos have an effect on logical structure. Using indentation to show the logical structure of a goto and its target, however, is difficult or impossible. (...)</p>
-<p>Use of gotos is a matter of religion. My dogma is that in modern languages, you can easily replace nine out of ten gotos with equivalent sequential constructs. In these simple cases, you should replace gotos out of habit. In the hard cases, you can still exorcise the goto in nine out of ten cases: You can break the code into smaller routines, use try-finally, use nested ifs, test and retest a status variable, or restructure a conditional. Eliminating the goto is harder in these cases, but it’s good mental exercise (...).</p>
-<p>-- McConnell, Steve C. (2004). <em>Code Complete. Second Edition</em>. Microsoft Press.</p>
-</blockquote>
+<p>Code containing gotos is hard to format. Indentation should be used to show logical structure and gotos have an effect on logical structure. Trying to use indentation to show the logical structure of a goto, however, is difficult or impossible.</p>
+<p>Use of gotos is a matter of religion. In modern languages, you can easily replace nine out of ten gotos with equivalent structured constructs. In these simple cases, you should replace gotos out of habit. In the hard cases, 
+you can break the code into smaller routines; use nested ifs; test and retest a status variable; or restructure a conditional. Eliminating the goto is harder in these cases, but it's good exercise.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code>CREATE OR REPLACE PACKAGE BODY my_package IS
-   PROCEDURE password_check (in_password IN VARCHAR2) IS 
-      co_digitarray  CONSTANT STRING(10 CHAR)   := '0123456789';
-      co_lower_bound CONSTANT SIMPLE_INTEGER := 1;
-      co_errno       CONSTANT SIMPLE_INTEGER := -20501;
-      co_errmsg      CONSTANT STRING(100 CHAR)  := 'Password must contain a digit.';
-      l_isdigit      BOOLEAN     := FALSE;
-      l_len_pw       PLS_INTEGER;
-      l_len_array    PLS_INTEGER;
-   BEGIN
-      l_len_pw    := LENGTH(in_password);
-      l_len_array := LENGTH(co_digitarray);
+<pre><code class="sql">create or replace package body my_package is
+   procedure password_check (in_password in varchar2) is 
+      k_digitarray  constant string(10 char)   := '0123456789';
+      k_lower_bound constant simple_integer := 1;
+      k_errno       constant simple_integer := -20501;
+      k_errmsg      constant string(100 char)  := 'Password must contain a digit.';
+      l_isdigit     boolean     := false;
+      l_len_pw      pls_integer;
+      l_len_array   pls_integer;
+   begin
+      l_len_pw    := length(in_password);
+      l_len_array := length(k_digitarray);
 
       &lt;&lt;check_digit&gt;&gt;
-      FOR i IN co_lower_bound .. l_len_array
-      LOOP
+      for i in k_lower_bound .. l_len_array
+      loop
          &lt;&lt;check_pw_char&gt;&gt;
-         FOR j IN co_lower_bound .. l_len_pw
-         LOOP
-            IF SUBSTR(in_password, j, 1) = SUBSTR(co_digitarray, i, 1) THEN
-               l_isdigit := TRUE;
-               GOTO check_other_things;
-            END IF;
-         END LOOP check_pw_char;
-      END LOOP check_digit;
+         for j in k_lower_bound .. l_len_pw
+         loop
+            if substr(in_password, j, 1) = substr(k_digitarray, i, 1) then
+               l_isdigit := true;
+               goto check_other_things;
+            end if;
+         end loop check_pw_char;
+      end loop check_digit;
 
       &lt;&lt;check_other_things&gt;&gt;
-      NULL;
+      null;
 
-      IF NOT l_isdigit THEN
-         raise_application_error(co_errno, co_errmsg);
-      END IF;
-   END password_check;
-END my_package;
+      if not l_isdigit then
+         raise_application_error(k_errno, k_errmsg);
+      end if;
+   end password_check;
+end my_package;
 /
 </code></pre>
 
 <h2 id="example-better">Example (better)</h2>
-<pre><code>CREATE OR REPLACE PACKAGE BODY my_package IS
-   PROCEDURE password_check (in_password IN VARCHAR2) IS 
-      co_digitarray  CONSTANT STRING(10 CHAR)   := '0123456789';
-      co_lower_bound CONSTANT SIMPLE_INTEGER := 1;
-      co_errno       CONSTANT SIMPLE_INTEGER := -20501;
-      co_errmsg      CONSTANT STRING(100 CHAR)  := 'Password must contain a digit.';
-      l_isdigit      BOOLEAN     := FALSE;
-      l_len_pw       PLS_INTEGER;
-      l_len_array    PLS_INTEGER;
-   BEGIN
-      l_len_pw    := LENGTH(in_password);
-      l_len_array := LENGTH(co_digitarray);
+<pre><code class="sql">create or replace package body my_package is
+   procedure password_check (in_password in varchar2) is 
+      k_digitarray  constant string(10 char)   := '0123456789';
+      k_lower_bound constant simple_integer := 1;
+      k_errno       constant simple_integer := -20501;
+      k_errmsg      constant string(100 char)  := 'Password must contain a digit.';
+      l_isdigit      boolean     := false;
+      l_len_pw       pls_integer;
+      l_len_array    pls_integer;
+   begin
+      l_len_pw    := length(in_password);
+      l_len_array := length(k_digitarray);
 
       &lt;&lt;check_digit&gt;&gt;
-      FOR i IN co_lower_bound .. l_len_array
-      LOOP
+      for i in k_lower_bound .. l_len_array
+      loop
          &lt;&lt;check_pw_char&gt;&gt;
-         FOR j IN co_lower_bound .. l_len_pw
-         LOOP
-            IF SUBSTR(in_password, j, 1) = SUBSTR(co_digitarray, i, 1) THEN
-               l_isdigit := TRUE;
-               EXIT check_digit; -- early exit condition
-            END IF;
-         END LOOP check_pw_char;
-      END LOOP check_digit;
+         for j in k_lower_bound .. l_len_pw
+         loop
+            if substr(in_password, j, 1) = substr(k_digitarray, i, 1) then
+               l_isdigit := true;
+               exit check_digit; -- early exit condition
+            end if;
+         end loop check_pw_char;
+      end loop check_digit;
 
       &lt;&lt;check_other_things&gt;&gt;
-      NULL;
+      null;
 
-      IF NOT l_isdigit THEN
-         raise_application_error(co_errno, co_errmsg);
-      END IF;
-   END password_check;
-END my_package;
+      if not l_isdigit then
+         raise_application_error(k_errno, k_errmsg);
+      end if;
+   end password_check;
+end my_package;
 /
 </code></pre>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code>CREATE OR REPLACE PACKAGE BODY my_package IS
-   PROCEDURE password_check (in_password IN VARCHAR2) IS
-      co_digitpattern CONSTANT STRING(10 CHAR)   := '\d';
-      co_errno        CONSTANT SIMPLE_INTEGER := -20501;
-      co_errmsg       CONSTANT STRING(100 CHAR)  := 'Password must contain a digit.';
-   BEGIN
-      IF NOT REGEXP_LIKE(in_password, co_digitpattern) 
-      THEN
-         raise_application_error(co_errno, co_errmsg);
-      END IF;
-   END password_check;
-END my_package;
+<pre><code class="sql">create or replace package body my_package is
+   procedure password_check (in_password in varchar2) is
+      k_digitpattern constant string(10 char)   := '\d';
+      k_errno        constant simple_integer := -20501;
+      k_errmsg       constant string(100 char)  := 'Password must contain a digit.';
+   begin
+      if not regexp_like(in_password, k_digitpattern) 
+      then
+         raise_application_error(k_errno, k_errmsg);
+      end if;
+   end password_check;
+end my_package;
 /
 </code></pre>
                 
@@ -2464,9 +2474,9 @@ END my_package;
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Trivadis" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/insum-labs" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/trivadis" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/insumsolutions" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

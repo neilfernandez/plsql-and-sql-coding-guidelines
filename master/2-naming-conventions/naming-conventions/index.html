@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/2-naming-conventions/naming-conventions/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/2-naming-conventions/naming-conventions/">
       
       
       
@@ -98,9 +98,9 @@
     <nav class="md-header-nav md-grid">
       <div class="md-flex">
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
+          <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../images/trivadis-logo.svg" height="21">
+              <img src="../../images/insum-logo.png" height="31">
             
           </a>
         </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
             </div>
@@ -192,9 +192,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
+    <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../images/trivadis-logo.svg" width="48" height="48">
+        <img src="../../images/insum-logo.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
     </div>
@@ -315,13 +315,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-constraint" class="md-nav__link">
-    Check Constraint
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#dml-instead-of-trigger" class="md-nav__link">
     DML / Instead of Trigger
   </a>
@@ -401,6 +394,13 @@
           <li class="md-nav__item">
   <a href="#table" class="md-nav__link">
     Table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surrogate-key-columns" class="md-nav__link">
+    Surrogate Key Columns
   </a>
   
 </li>
@@ -510,8 +510,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4-language-usage/1-general/g-1020/" title="G-1020: Always have a matching loop or block label." class="md-nav__link">
-      G-1020: Always have a matching loop or block label.
+    <a href="../../4-language-usage/1-general/g-1020/" title="G-1020: Have a matching loop or block label." class="md-nav__link">
+      G-1020: Have a matching loop or block label.
     </a>
   </li>
 
@@ -534,8 +534,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4-language-usage/1-general/g-1040/" title="G-1040: Avoid dead code." class="md-nav__link">
-      G-1040: Avoid dead code.
+    <a href="../../4-language-usage/1-general/g-1040/" title="G-1040: Always avoid dead code." class="md-nav__link">
+      G-1040: Always avoid dead code.
     </a>
   </li>
 
@@ -762,18 +762,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../4-language-usage/2-variables-and-types/2-numeric-data-types/g-2210/" title="G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision." class="md-nav__link">
-      G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision.
-    </a>
-  </li>
-
         
           
           
@@ -1095,6 +1083,18 @@
   <li class="md-nav__item">
     <a href="../../4-language-usage/3-dml-and-sql/1-general/g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-nav__link">
       G-3190: Avoid using NATURAL JOIN.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4-language-usage/3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+      G-3200: Never use an ON clause when USING will work.
     </a>
   </li>
 
@@ -1506,8 +1506,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4-language-usage/5-exception-handling/g-5010/" title="G-5010: Try to use a error/logging framework for your application." class="md-nav__link">
-      G-5010: Try to use a error/logging framework for your application.
+    <a href="../../4-language-usage/5-exception-handling/g-5010/" title="G-5010: Always use an error/logging framework for your application." class="md-nav__link">
+      G-5010: Always use an error/logging framework for your application.
     </a>
   </li>
 
@@ -1807,6 +1807,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4-language-usage/7-stored-objects/2-packages/g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link">
+      G-7250: Always use NOCOPY when appropriate
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2031,6 +2043,30 @@
   <li class="md-nav__item">
     <a href="../../4-language-usage/7-stored-objects/7-triggers/g-7710/" title="G-7710: Avoid cascading triggers." class="md-nav__link">
       G-7710: Avoid cascading triggers.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4-language-usage/7-stored-objects/7-triggers/g-7720/" title="G-7720: Avoid triggers for business logic" class="md-nav__link">
+      G-7720: Avoid triggers for business logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4-language-usage/7-stored-objects/7-triggers/g-7730/" title="G-7730: If using triggers, use compound triggers" class="md-nav__link">
+      G-7730: If using triggers, use compound triggers
     </a>
   </li>
 
@@ -2326,30 +2362,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../7-tool-support/tool-support/" title="Tool Support" class="md-nav__link">
-      Tool Support
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
-      Appendix
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2402,13 +2414,6 @@
           <li class="md-nav__item">
   <a href="#column" class="md-nav__link">
     Column
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-constraint" class="md-nav__link">
-    Check Constraint
   </a>
   
 </li>
@@ -2498,6 +2503,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#surrogate-key-columns" class="md-nav__link">
+    Surrogate Key Columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#temporary-table-global-temporary-table" class="md-nav__link">
     Temporary Table (Global Temporary Table)
   </a>
@@ -2545,9 +2557,8 @@
 <ol>
 <li>Never use names with a leading numeric character.</li>
 <li>Always choose meaningful and specific names.</li>
-<li>Avoid using abbreviations unless the full name is excessively long.</li>
-<li>Avoid long abbreviations. Abbreviations should be shorter than 5 characters.</li>
-<li>Any abbreviations must be widely known and accepted. </li>
+<li>Avoid using abbreviations. </li>
+<li>If abbreviations are used, they must be widely known and accepted. </li>
 <li>Create a glossary with all accepted abbreviations.</li>
 <li>Never use ORACLE keywords as names. A list of ORACLEs keywords may be found in the dictionary view <code>V$RESERVED_WORDS</code>.</li>
 <li>Avoid adding redundant or meaningless prefixes and suffixes to identifiers.<br/>Example: <code>CREATE TABLE emp_table</code>.</li>
@@ -2581,10 +2592,10 @@
 <td><code>l_version</code></td>
 </tr>
 <tr>
-<td>Cursor</td>
-<td><code>c_</code></td>
+<td>Constants *</td>
+<td><code>k_</code></td>
 <td></td>
-<td><code>c_employees</code></td>
+<td><code>k_employee_permanent</code></td>
 </tr>
 <tr>
 <td>Record</td>
@@ -2596,7 +2607,7 @@
 <td>Array / Table</td>
 <td><code>t_</code></td>
 <td></td>
-<td><code>t_employees</code></td>
+<td><code>t_employee</code></td>
 </tr>
 <tr>
 <td>Object</td>
@@ -2638,7 +2649,7 @@
 <td>Array/Table Type Definitions</td>
 <td><code>t_</code></td>
 <td><code>_type</code></td>
-<td><code>t_employees_type</code></td>
+<td><code>t_employee_type</code></td>
 </tr>
 <tr>
 <td>Exception</td>
@@ -2647,42 +2658,43 @@
 <td><code>e_employee_exists</code></td>
 </tr>
 <tr>
-<td>Constants</td>
-<td><code>co_</code></td>
-<td></td>
-<td><code>co_empno</code></td>
-</tr>
-<tr>
 <td>Subtypes</td>
 <td></td>
 <td><code>_type</code></td>
 <td><code>big_string_type</code></td>
 </tr>
+<tr>
+<td>Cursor</td>
+<td></td>
+<td><code>_cur</code></td>
+<td><code>employee_cur</code></td>
+</tr>
 </tbody>
 </table>
+<p>* Why k_ instead of c_ for constants? A k is hard (straight lines, hard sound when pronouced in English) while a c is soft (curved lines and soft sound when pronounced in English). C also has the possibility of being vague (some folks use c_ for cursors) and sounds changable... Also, very big companies (like Google in their coding standards) use k as a prefix for constants.</p>
 <h2 id="database-object-naming-conventions">Database Object Naming Conventions</h2>
 <p>Never enclose object names (table names, column names, etc.) in double quotes to enforce mixed case or lower case object names in the data dictionary.</p>
+<p>Edition Based Redefinition (EBR) is one major exception to this guideline. When naming tables that will be covered by editioning views, it is preferable to name the covered table in lower case begining with an underscore (for example: <code>"_employee"</code>). The base table will be covered by an editioning view that has the name <code>employee</code>. This greatly simplifies migration from non-EBR systems to EBR systems since all existing code already references data stored in <code>employee</code>. "Embracing the abomination of forced lower case names" highlights the fact that these objects shouldn't be directly referenced (execpt, obviously, by forward and reverse cross edition triggers during edition migration, and simple auditing/surrogate key triggers, if they are used). Since developers and users should only be referencing data through editioning views (which to them are effectively the tables of the applications) they won't be tempted to use the base table. In addition, when using tools to look at the list of tables, all editioning view covered tables will be aligned together and thus clearly delinated from non-covered tables.</p>
 <h3 id="collection-type">Collection Type</h3>
 <p>A collection type should include the name of the collected objects in their name. Furthermore, they should have the suffix <code>_ct</code> to identify it as a collection.</p>
 <p>Optionally prefixed by a project abbreviation.</p>
 <p>Examples:</p>
 <ul>
-<li><code>employees_ct</code></li>
-<li><code>orders_ct</code></li>
+<li><code>employee_ct</code></li>
+<li><code>order_ct</code></li>
 </ul>
 <h3 id="column">Column</h3>
-<p>Singular name of what is stored in the column (unless the column data type is a collection, in this case you use plural<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> names)</p>
-<p>Add a comment to the database dictionary for every column.</p>
-<h3 id="check-constraint">Check Constraint</h3>
-<p>Table name or table abbreviation followed by the column and/or role of the check constraint, a <code>_ck</code> and an optional number suffix.</p>
-<p>Examples:</p>
-<ul>
-<li><code>employees_salary_min_ck</code></li>
-<li><code>orders_mode_ck</code></li>
-</ul>
+<p>Singular name of what is stored in the column (unless the column data type is a collection, in this case you use plural names)</p>
+<p>Add a useful comment to the database dictionary for every column.</p>
 <h3 id="dml-instead-of-trigger">DML / Instead of Trigger</h3>
 <p>Choose a naming convention that includes:</p>
 <p>either</p>
+<ul>
+<li>the name of the object the trigger is added to,</li>
+<li>the activity done by the trigger,</li>
+<li>the suffix <code>_trg</code></li>
+</ul>
+<p>or</p>
 <ul>
 <li>the name of the object the trigger is added to,</li>
 <li>any of the triggering events:<ul>
@@ -2691,24 +2703,18 @@
 </ul>
 </li>
 </ul>
-<p>or</p>
-<ul>
-<li>the name of the object the trigger is added to,</li>
-<li>the activity done by the trigger,</li>
-<li>the suffix <code>_trg</code></li>
-</ul>
 <p>Examples:</p>
 <ul>
-<li><code>employees_br_iud</code></li>
-<li><code>orders_audit_trg</code></li>
-<li><code>orders_journal_trg</code></li>
+<li><code>employee_br_iud</code></li>
+<li><code>order_audit_trg</code></li>
+<li><code>order_journal_trg</code></li>
 </ul>
 <h3 id="foreign-key-constraint">Foreign Key Constraint</h3>
-<p>Table abbreviation followed by referenced table abbreviation followed by a <code>_fk</code> and an optional number suffix.</p>
+<p>Table name followed by referenced table name followed by a <code>_fk</code> and an optional number suffix. If working on a pre-12.2 database, then you will probably end up being forced into abbreviations due to short object name lengths in older databases.</p>
 <p>Examples:</p>
 <ul>
-<li><code>empl_dept_fk</code></li>
-<li><code>sct_icmd_ic_fk1</code></li>
+<li><code>employee_department_fk</code></li>
+<li><code>sct_icmd_ic_fk1</code> --Pre 12.2 database</li>
 </ul>
 <h3 id="function">Function</h3>
 <p>Name is built from a verb followed by a noun in general. Nevertheless, it is not sensible to call a function <code>get_...</code> as a function always gets something.</p>
@@ -2728,16 +2734,18 @@
 <p>Optionally prefixed by a project abbreviation.</p>
 <p>Examples:</p>
 <ul>
-<li><code>employees_api</code> - API for the employee table</li>
-<li><code>logging_up</code> - Utilities including logging support</li>
+<li><code>employee_api</code> - API for the employee table</li>
+<li><code>logger</code> - Utilities including logging support</li>
+<li><code>constants</code> - Constants for use across a project</li>
+<li><code>types</code> - Types for use across a project</li>
 </ul>
 <h3 id="primary-key-constraint">Primary Key Constraint</h3>
 <p>Table name or table abbreviation followed by the suffix <code>_pk</code>.</p>
 <p>Examples:</p>
 <ul>
-<li><code>employees_pk</code></li>
-<li><code>departments_pk</code></li>
-<li><code>sct_contracts_pk</code></li>
+<li><code>employee_pk</code></li>
+<li><code>department_pk</code></li>
+<li><code>contract_pk</code></li>
 </ul>
 <h3 id="procedure">Procedure</h3>
 <p>Name is built from a verb followed by a noun. The name of the procedure should answer the question “What is done?” </p>
@@ -2750,15 +2758,16 @@
 <li><code>check_order_state</code></li>
 </ul>
 <h3 id="sequence">Sequence</h3>
-<p>Name is built from the table name (or its abbreviation) the sequence serves as primary key generator and the suffix <code>_seq</code> or the purpose of the sequence followed by a <code>_seq</code>.</p>
+<p>Version: Pre 12 only, 12 and later use identity columns, or potentially even better, use a default of <code>to_number(sys_guid(), 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')</code>.</p>
+<p>Name is built from the table name the sequence serves as primary key generator and the suffix <code>_seq</code> or the purpose of the sequence followed by a <code>_seq</code>.</p>
 <p>Optionally prefixed by a project abbreviation.</p>
 <p>Examples:</p>
 <ul>
-<li><code>employees_seq</code></li>
+<li><code>employee_seq</code></li>
 <li><code>order_number_seq</code></li>
 </ul>
 <h3 id="synonym">Synonym</h3>
-<p>Synonyms should be used to address an object in a foreign schema rather than to rename an object. Therefore, synonyms should share the name with the referenced object.</p>
+<p>Synonyms should share the name with the object referenced in another schema.</p>
 <h3 id="system-trigger">System Trigger</h3>
 <p>Name of the event the trigger is based on.</p>
 <ul>
@@ -2771,63 +2780,91 @@
 <li><code>logon_trg</code></li>
 </ul>
 <h3 id="table">Table</h3>
-<p>Plural<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> name of what is contained in the table (unless the table is designed to always hold one row only – then you should use a singular name).</p>
-<p>Suffixed by <code>_eb</code> when protected by an editioning view.</p>
+<p>Singular name of what is contained in the table.</p>
 <p>Add a comment to the database dictionary for every table and every column in the table.</p>
 <p>Optionally prefixed by a project abbreviation.</p>
 <p>Examples:</p>
 <ul>
-<li><code>employees</code></li>
-<li><code>departments</code></li>
-<li><code>countries_eb</code> - table interfaced by an editioning view named <code>countries</code></li>
-<li><code>sct_contracts</code></li>
-<li><code>sct_contract_lines</code></li>
-<li><code>sct_incentive_modules</code></li>
+<li><code>employee</code></li>
+<li><code>department</code></li>
+<li><code>sct_contract</code></li>
+<li><code>sct_contract_line</code></li>
+<li><code>sct_incentive_module</code></li>
 </ul>
+<p>Reason: Singular names have the following advantages over plural names:
+1) In general, tables represent entities. Entities are singular. This encourages the art of Entity-Relationship modeling.
+2) If all table names are singular, then you don't have to know if a table has a single row or multiple rows before you use it.
+3) Plural names can be vastly different from singular names. What is the plural of news? lotus? knife? cactus? nucleus? There are so many words that are difficult and nonstandard to pluralize that it can add significant work to a project to 'figure out the plurals'.
+4) For non-native speakers of whatever language is being used for table names, point number 3 is magnified significantly.
+5) Plurals add extra unnecessary length to table names.
+6) Bar far the biggest reason: There is no value in going through all the work to plural a table name. SQL statements often deal with a single row from a table with multiple rows, so you can't make the argument that <code>employees</code> is better than <code>employee</code> 'because the SQL will read better'.</p>
+<p>Example (bad):</p>
+<pre><code>well_bores
+well_bore_completions
+well_bore_completion_components
+well_bore_studies
+well_bore_study_results
+wells
+</code></pre>
+
+<p>Example (good):</p>
+<pre><code>well
+well_bore
+well_bore_completion
+well_bore_completion_component
+well_bore_study
+well_bore_study_result
+</code></pre>
+
+<h3 id="surrogate-key-columns">Surrogate Key Columns</h3>
+<p>Surrogate primary key columns should be the table name with an underscore and id appended. For example: <code>employee_id</code></p>
+<p>Reason: Naming the surrogate primary key column the same name that it would have (at least 99% of the time) when used as a foreign key allows the use of the <code>using</code> clause in SQL which greatly increases readability and maintainability of SQL code. When each table has a surrogate primary key column named <code>id</code>, then <code>select</code> clauses that select multiple id columns will need aliases (more code, harder to read and maintain). Additionaly, the <code>id</code> surrogate key column means that every join will be forced into the <code>on</code> syntax which is more error-prone and harder to read than the <code>using</code> clause.</p>
+<p>Example (bad):</p>
+<pre><code>select e.id as employee_id
+      ,d.id as department_id
+      ,e.last_name
+      ,d.name
+  from employee e
+  join department d on (e.department_id = d.id);
+</code></pre>
+
+<p>Example (good):</p>
+<pre><code>select e.employee_id
+      ,department_id
+      ,e.last_name
+      ,d.name
+  from employee e
+  join department d using (department_id);
+</code></pre>
+
 <h3 id="temporary-table-global-temporary-table">Temporary Table (Global Temporary Table)</h3>
 <p>Naming as described for tables.</p>
-<p>Optionally suffixed by <code>_tmp</code></p>
+<p>Ideally suffixed by <code>_gtt</code></p>
 <p>Optionally prefixed by a project abbreviation.</p>
 <p>Examples:</p>
 <ul>
-<li><code>employees_tmp</code></li>
-<li><code>contracts_tmp</code></li>
+<li><code>employee_gtt</code></li>
+<li><code>contract_gtt</code></li>
 </ul>
 <h3 id="unique-key-constraint">Unique Key Constraint</h3>
-<p>Table name or table abbreviation followed by the role of the unique key constraint, a <code>_uk</code> and an optional number suffix.</p>
+<p>Table name followed by the role of the unique key constraint, a <code>_uk</code> and an optional number suffix, if necessary.</p>
 <p>Examples:</p>
 <ul>
-<li><code>employees_name_uk</code></li>
-<li><code>departments_deptno_uk</code></li>
-<li><code>sct_contracts_uk</code></li>
-<li><code>sct_coli_uk</code></li>
-<li><code>sct_icmd_uk1</code></li>
+<li><code>employee_name_uk</code></li>
+<li><code>department_deptno_uk</code></li>
+<li><code>sct_contract_uk</code></li>
 </ul>
 <h3 id="view">View</h3>
-<p>Plural<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup> name of what is contained in the view.
-Optionally suffixed by an indicator identifying the object as a view (mostly used, when a 1:1 view layer lies above the table layer)</p>
-<p>Editioning views are named like the original underlying table to avoid changing the existing application code when introducing edition based redefinition (EBR).</p>
+<p>Singular name of what is contained in the view.</p>
+<p>Ideally, suffixed by an indicator identifying the object as a view like <code>_v</code> or <code>_vw</code> (mostly used, when a 1:1 view layer lies above the table layer, but <em>not</em> used for editioning views)</p>
 <p>Add a comment to the database dictionary for every view and every column.</p>
 <p>Optionally prefixed by a project abbreviation.</p>
 <p>Examples:</p>
 <ul>
-<li><code>active_orders</code></li>
-<li><code>orders_v</code> - a view to the orders table</li>
-<li><code>countries</code> - an editioning view for table <code>countries_eb</code></li>
+<li><code>active_order</code> -- A view that selects only active orders from the order table</li>
+<li><code>order_v</code> -- A view to the order table</li>
+<li><code>order</code> -- An editioning view that covers the <code>"_order"</code> base table</li>
 </ul>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>We see a table and a view as a collection. A jar containing beans is labeled "beans". 
-In Java we call such a collection also "beans" (<code>List&lt;Bean&gt; beans</code>) and name an entry "bean" 
-(<code>for (Bean bean : beans) {...}</code>). An entry of a table is a row (singular) and a table can 
-contain an unbounded number of rows (plural). This and the fact that the Oracle database uses 
-the same concept for their tables and views lead to the decision to use the plural 
-to name a table or a view.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
                 
                   
                 
@@ -2894,9 +2931,9 @@ to name a table or a view.&#160;<a class="footnote-backref" href="#fnref:1" titl
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Trivadis" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/insum-labs" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/trivadis" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/insumsolutions" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

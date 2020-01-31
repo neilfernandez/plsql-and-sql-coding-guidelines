@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/">
       
       
       
@@ -98,9 +98,9 @@
     <nav class="md-header-nav md-grid">
       <div class="md-flex">
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
+          <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="./images/trivadis-logo.svg" height="21">
+              <img src="./images/insum-logo.png" height="31">
             
           </a>
         </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
             </div>
@@ -192,9 +192,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
+    <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="images/trivadis-logo.svg" width="48" height="48">
+        <img src="images/insum-logo.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
     </div>
@@ -253,13 +253,6 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#foreword" class="md-nav__link">
-    Foreword
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
@@ -398,8 +391,8 @@
 
 
   <li class="md-nav__item">
-    <a href="4-language-usage/1-general/g-1020/" title="G-1020: Always have a matching loop or block label." class="md-nav__link">
-      G-1020: Always have a matching loop or block label.
+    <a href="4-language-usage/1-general/g-1020/" title="G-1020: Have a matching loop or block label." class="md-nav__link">
+      G-1020: Have a matching loop or block label.
     </a>
   </li>
 
@@ -422,8 +415,8 @@
 
 
   <li class="md-nav__item">
-    <a href="4-language-usage/1-general/g-1040/" title="G-1040: Avoid dead code." class="md-nav__link">
-      G-1040: Avoid dead code.
+    <a href="4-language-usage/1-general/g-1040/" title="G-1040: Always avoid dead code." class="md-nav__link">
+      G-1040: Always avoid dead code.
     </a>
   </li>
 
@@ -650,18 +643,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="4-language-usage/2-variables-and-types/2-numeric-data-types/g-2210/" title="G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision." class="md-nav__link">
-      G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision.
-    </a>
-  </li>
-
         
           
           
@@ -983,6 +964,18 @@
   <li class="md-nav__item">
     <a href="4-language-usage/3-dml-and-sql/1-general/g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-nav__link">
       G-3190: Avoid using NATURAL JOIN.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="4-language-usage/3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+      G-3200: Never use an ON clause when USING will work.
     </a>
   </li>
 
@@ -1394,8 +1387,8 @@
 
 
   <li class="md-nav__item">
-    <a href="4-language-usage/5-exception-handling/g-5010/" title="G-5010: Try to use a error/logging framework for your application." class="md-nav__link">
-      G-5010: Try to use a error/logging framework for your application.
+    <a href="4-language-usage/5-exception-handling/g-5010/" title="G-5010: Always use an error/logging framework for your application." class="md-nav__link">
+      G-5010: Always use an error/logging framework for your application.
     </a>
   </li>
 
@@ -1695,6 +1688,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="4-language-usage/7-stored-objects/2-packages/g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link">
+      G-7250: Always use NOCOPY when appropriate
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1919,6 +1924,30 @@
   <li class="md-nav__item">
     <a href="4-language-usage/7-stored-objects/7-triggers/g-7710/" title="G-7710: Avoid cascading triggers." class="md-nav__link">
       G-7710: Avoid cascading triggers.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="4-language-usage/7-stored-objects/7-triggers/g-7720/" title="G-7720: Avoid triggers for business logic" class="md-nav__link">
+      G-7720: Avoid triggers for business logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="4-language-usage/7-stored-objects/7-triggers/g-7730/" title="G-7730: If using triggers, use compound triggers" class="md-nav__link">
+      G-7730: If using triggers, use compound triggers
     </a>
   </li>
 
@@ -2214,30 +2243,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="7-tool-support/tool-support/" title="Tool Support" class="md-nav__link">
-      Tool Support
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="9-appendix/appendix/" title="Appendix" class="md-nav__link">
-      Appendix
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2257,13 +2262,6 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#foreword" class="md-nav__link">
-    Foreword
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
@@ -2317,14 +2315,7 @@
                 
                 
                 <h1 id="about">About</h1>
-<h2 id="foreword">Foreword</h2>
-<p><img src="images/urban-lankes.png" style="padding-top:5px; padding-right:15px; padding-bottom:15px; padding-left:0px;" title="Urban Lankes" align="left" width="150px"/>
-In the I.T. world of today, robust and secure applications are becoming more and more important. Many business processes no longer work without I.T. and the dependence of businesses on their I.T. has grown tremendously, meaning we need robust and maintainable applications. An important requirement is to have standards and guidelines, which make it possible to maintain source code created by a number of people quickly and easily. This forms the basis of well functioning off- or on-shoring strategy, as it allows quality assurance to be carried out efficiently at the source. </p>
-<p>Good standards and guidelines are based on the wealth of experience and knowledge gained from past (and future?) problems, such as those, which can arise in a cloud environment, for example.<br/></p>
-<p><img src="images/urban-lankes-signature.png" title="Urban Lankes" width="200px"/><br/>
-Urban Lankes<br/>
-Chairman of the Board of Directors<br/>
-Trivadis<br/></p>
+<p>We all stand in the shoulders of giants. Many people have participated in the creation and refinement of these guidelines. Without the efforts from Roger Troller, Jörn Kulessa, Daniela Reiner, Richard Bushnell, Andreas Flubacher, Thomas Mauch, and Philipp Salvisberg, this guidelines document wouldn't be what it is today.</p>
 <hr />
 <p><img src="images/steven-feuerstein.png" style="padding-top:5px; padding-right:15px; padding-bottom:15px; padding-left:0px;" title="Steven Feuerstein" align="left" width="150px"/>
 The Oracle Database Developer community is made stronger by resources freely shared by experts around the world, such as the Trivadis Coding Guidelines. If you have not yet adopted standards for writing SQL and PL/SQL in your applications, this is a great place to start.<br/><br/><br/><br/></p>
@@ -2333,22 +2324,31 @@ The Oracle Database Developer community is made stronger by resources freely sha
 Team Lead, Oracle Developer Advocates<br/>
 Oracle<br/><br/></p>
 <hr />
-<p><img src="images/roger-troller.png" style="padding-top:5px; padding-right:15px; padding-bottom:15px; padding-left:0px;" title="Roger Troller" align="left" width="150px"/>Coding Guidelines are a crucial part of software development. It is a matter of fact, that code is more often read than written – therefore we should take efforts to ease the work of the reader, which is not necessarily the author.</p>
-<p>I am convinced that this standard may be a good starting point for your own guidelines.<br/><br/><br/></p>
-<p>Roger Troller<br/>
-Senior Consultant<br/>
-finnova AG Bankware<br/></p>
-<hr />
 <h2 id="license">License</h2>
-<p>The Trivadis PL/SQL &amp; SQL Coding Guidelines are licensed under the Apache License, Version 2.0. You may obtain a copy of the License at <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>.</p>
+<p>The Insum PL/SQL &amp; SQL Coding Guidelines are licensed under the Apache License, Version 2.0. You may obtain a copy of the License at <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>.</p>
 <h3 id="trademarks">Trademarks</h3>
 <p>All terms that are known trademarks or service marks have been capitalized. All trademarks are the property of their respective owners.</p>
 <h3 id="disclaimer">Disclaimer</h3>
 <p>The authors and publisher shall have neither liability nor responsibility to any person or entity with respect to the loss or damages arising from the information contained in this work. This work may include inaccuracies or typographical errors and solely represent the opinions of the authors. Changes are periodically made to this document without notice. The authors reserve the right to revise this document at any time without notice.</p>
 <h2 id="revision-history">Revision History</h2>
-<p>The first version of these guidelines was compiled by Roger Troller on March 17, 2009. Jörn Kulessa, Daniela Reiner, Richard Bushnell, Andreas Flubacher and Thomas Mauch helped Roger complete version 1.2 until August 21, 2009. This was the first GA version. The handy printed version in A5 format was distributed free of charge at the DOAG Annual Conference and on other occasions. Since then Roger updated the guidelines regularily. Philipp Salvisberg was involved in the review process for version 3.0 which was a major update. Philipp took the lead, after Roger left Trivadis in 2016.</p>
-<p>Since July, 7 2018 these guidelines are hosted on GitHub. Ready to be enhanced by the community and forked to fit specific needs. </p>
-<p>On <a href="https://github.com/Trivadis/plsql-and-sql-coding-guidelines/releases">https://github.com/Trivadis/plsql-and-sql-coding-guidelines/releases</a> you find the release information for every version since 1.2. </p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Who</th>
+<th>Date</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>Soule</td>
+<td>2019.09.12</td>
+<td>Forked from the <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/">Trivadis</a> standards with many updates due to coding style and minor updates to grammar.</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -2401,9 +2401,9 @@ finnova AG Bankware<br/></p>
   <div class="md-footer-social">
     <link rel="stylesheet" href="assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Trivadis" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/insum-labs" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/trivadis" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/insumsolutions" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/4-language-usage/3-dml-and-sql/1-general/g-3160/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/4-language-usage/3-dml-and-sql/1-general/g-3200/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>G-3160: Avoid visible virtual columns. - PL/SQL & SQL Coding Guidelines</title>
+        <title>G-3200: Never use an ON clause when USING will work. - PL/SQL & SQL Coding Guidelines</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#g-3160-avoid-visible-virtual-columns" tabindex="1" class="md-skip">
+      <a href="#g-3200-never-use-an-on-clause-when-using-will-work" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
                   PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
                 </span>
                 <span class="md-header-nav__topic">
-                  G-3160: Avoid visible virtual columns.
+                  G-3200: Never use an ON clause when USING will work.
                 </span>
               
             
@@ -865,70 +865,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        G-3160: Avoid visible virtual columns.
-      </label>
-    
-    <a href="./" title="G-3160: Avoid visible virtual columns." class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../g-3160/" title="G-3160: Avoid visible virtual columns." class="md-nav__link">
       G-3160: Avoid visible virtual columns.
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#restriction" class="md-nav__link">
-    Restriction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reason" class="md-nav__link">
-    Reason
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-bad" class="md-nav__link">
-    Example (bad)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-good" class="md-nav__link">
-    Example (good)
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -972,11 +913,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        G-3200: Never use an ON clause when USING will work.
+      </label>
+    
+    <a href="./" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link md-nav__link--active">
       G-3200: Never use an ON clause when USING will work.
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reason" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-bad" class="md-nav__link">
+    Example (bad)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-good" class="md-nav__link">
+    Example (good)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2264,13 +2257,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#restriction" class="md-nav__link">
-    Restriction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#reason" class="md-nav__link">
     Reason
   </a>
@@ -2308,57 +2294,28 @@
               
                 
                 
-                <h1 id="g-3160-avoid-visible-virtual-columns">G-3160: Avoid visible virtual columns.</h1>
+                <h1 id="g-3200-never-use-an-on-clause-when-using-will-work">G-3200: Never use an ON clause when USING will work.</h1>
 <div class="admonition warning">
-<p class="admonition-title">Major</p>
-<p>Maintainability, Reliability</p>
+<p class="admonition-title">Minor</p>
+<p>Maintainability</p>
 </div>
-<h2 id="restriction">Restriction</h2>
-<p>ORACLE 12c</p>
 <h2 id="reason">Reason</h2>
-<p>In contrast to visible columns, invisible columns are not part of a record defined using <code>%rowtype</code> construct. This is helpful as a virtual column may not be programmatically populated. If your virtual column is visible you have to manually define the record types used in API packages to be able to exclude them from being part of the record definition.</p>
-<p>Invisible columns may be accessed by explicitly adding them to the column list in a SELECT statement.</p>
+<p>An <code>on</code> clause requires more code than a <code>using</code> clause and presents a greater possibility for making errors. The <code>using</code> clause is easier to read and maintain.</p>
+<p>Note that the <code>using</code> clause prevents the use of a table alias for the join column in any of the other clauses of the sql statement. </p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code class="sql">alter table employee
-   add total_salary generated always as (salary + nvl(commission_pct,0) * salary)
-/
-
-declare
-   r_employee employee%rowtype;
-   l_id employee.employee_id%type := 107;
-begin
-   r_employee := employee_api.employee_by_id(l_id);
-   r_employee.salary := r_employee.salary * constants.small_increase();
-
-   update employee
-      set row = r_employee
-    where employee_id = l_id;
-end;
-/
-
-Error report -
-ORA-54017: UPDATE operation disallowed ON virtual COLUMNS
-ORA-06512: at line 9
+<pre><code class="sql">select e.deparment_id
+      ,d.department_name 
+      ,e.last_name 
+      ,e.first_name 
+  from employee e join department d on (e.department_id = d.department_id);
 </code></pre>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code class="sql">alter table employee
-   add total_salary invisible generated always as 
-      (salary + nvl(commission_pct,0) * salary)
-/
-
-declare
-   r_employee employee%rowtype;
-   k_id constant employee.employee_id%type := 107;
-begin
-   r_employee := employee_api.employee_by_id(k_id);
-   r_employee.salary := r_employee.salary * constants.small_increase();
-
-   update employee
-      set row = r_employee
-    where employee_id = k_id;
-end;
-/
+<pre><code class="sql">select   department_id
+       d.department_name 
+      ,e.last_name 
+      ,e.first_name 
+  from employee e join department d using (department_id);
 </code></pre>
                 
                   
@@ -2380,7 +2337,7 @@ end;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../g-3150/" title="G-3150: Try to use identity columns for surrogate keys." class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2389,19 +2346,19 @@ end;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                G-3150: Try to use identity columns for surrogate keys.
+                G-3190: Avoid using NATURAL JOIN.
               </span>
             </div>
           </a>
         
         
-          <a href="../g-3170/" title="G-3170: Always use DEFAULT ON NULL declarations to assign default values to table columns if you refuse to store NULL values." class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../2-bulk-operations/g-3210/" title="G-3210: Always use BULK OPERATIONS (BULK COLLECT, FORALL) whenever you have to execute a DML statement for more than 4 times." class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                G-3170: Always use DEFAULT ON NULL declarations to assign default values to table columns if you refuse to store NULL values.
+                G-3210: Always use BULK OPERATIONS (BULK COLLECT, FORALL) whenever you have to execute a DML statement for more than 4 times.
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

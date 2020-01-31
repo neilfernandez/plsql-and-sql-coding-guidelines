@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/4-language-usage/3-dml-and-sql/1-general/g-3120/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/4-language-usage/3-dml-and-sql/1-general/g-3120/">
       
       
       
@@ -98,9 +98,9 @@
     <nav class="md-header-nav md-grid">
       <div class="md-flex">
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
+          <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/trivadis-logo.svg" height="21">
+              <img src="../../../../images/insum-logo.png" height="31">
             
           </a>
         </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
             </div>
@@ -192,9 +192,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
+    <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/trivadis-logo.svg" width="48" height="48">
+        <img src="../../../../images/insum-logo.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
     </div>
@@ -328,8 +328,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1020/" title="G-1020: Always have a matching loop or block label." class="md-nav__link">
-      G-1020: Always have a matching loop or block label.
+    <a href="../../../1-general/g-1020/" title="G-1020: Have a matching loop or block label." class="md-nav__link">
+      G-1020: Have a matching loop or block label.
     </a>
   </li>
 
@@ -352,8 +352,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1040/" title="G-1040: Avoid dead code." class="md-nav__link">
-      G-1040: Avoid dead code.
+    <a href="../../../1-general/g-1040/" title="G-1040: Always avoid dead code." class="md-nav__link">
+      G-1040: Always avoid dead code.
     </a>
   </li>
 
@@ -580,18 +580,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/2-numeric-data-types/g-2210/" title="G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision." class="md-nav__link">
-      G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision.
-    </a>
-  </li>
-
         
           
           
@@ -990,6 +978,18 @@
   <li class="md-nav__item">
     <a href="../g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-nav__link">
       G-3190: Avoid using NATURAL JOIN.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+      G-3200: Never use an ON clause when USING will work.
     </a>
   </li>
 
@@ -1401,8 +1401,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Try to use a error/logging framework for your application." class="md-nav__link">
-      G-5010: Try to use a error/logging framework for your application.
+    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Always use an error/logging framework for your application." class="md-nav__link">
+      G-5010: Always use an error/logging framework for your application.
     </a>
   </li>
 
@@ -1702,6 +1702,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/2-packages/g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link">
+      G-7250: Always use NOCOPY when appropriate
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1926,6 +1938,30 @@
   <li class="md-nav__item">
     <a href="../../../7-stored-objects/7-triggers/g-7710/" title="G-7710: Avoid cascading triggers." class="md-nav__link">
       G-7710: Avoid cascading triggers.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7720/" title="G-7720: Avoid triggers for business logic" class="md-nav__link">
+      G-7720: Avoid triggers for business logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7730/" title="G-7730: If using triggers, use compound triggers" class="md-nav__link">
+      G-7730: If using triggers, use compound triggers
     </a>
   </li>
 
@@ -2221,30 +2257,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../7-tool-support/tool-support/" title="Tool Support" class="md-nav__link">
-      Tool Support
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
-      Appendix
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2331,53 +2343,54 @@
 </div>
 <h2 id="reason">Reason</h2>
 <p>It is more human readable to use aliases instead of writing columns with no table information.</p>
-<p>Especially when using subqueries the omission of table aliases may end in unexpected behavior and result. </p>
+<p>Especially when using subqueries the omission of table aliases may end in unexpected behavior and result.</p>
+<p>Also, note that even if you have a single table statement, it will almost always at some point in the future end up getting joined to another table, so you get bonus points if you use table aliases all the time.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code>SELECT last_name
+<pre><code class="sql">select last_name
       ,first_name
       ,department_name
-  FROM      employees  
-       JOIN departments USING (department_id)
- WHERE EXTRACT(MONTH FROM hire_date) = EXTRACT(MONTH FROM SYSDATE);
+  from      employee  
+       join department using (department_id)
+ where extract(month from hire_date) = extract(month from sysdate);
 </code></pre>
 
 <h2 id="example-better">Example (better)</h2>
-<pre><code>SELECT e.last_name
+<pre><code class="sql">select e.last_name
       ,e.first_name
       ,d.department_name
-  FROM      employees   e
-       JOIN departments d ON (e.department_id = d.department_id)
- WHERE EXTRACT(MONTH FROM e.hire_date) = EXTRACT(MONTH FROM SYSDATE);
+  from      employee   e
+       join department d using (department_id)
+ where extract(month from e.hire_date) = extract(month from sysdate);
 </code></pre>
 
 <h2 id="example-good">Example (good)</h2>
 <p>Using meaningful aliases improves the readability of your code.</p>
-<pre><code>SELECT emp.last_name
+<pre><code class="sql">select emp.last_name
       ,emp.first_name
       ,dept.department_name
-  FROM      employees   emp
-       JOIN departments dept ON (emp.department_id = dept.department_id)
- WHERE EXTRACT(MONTH FROM emp.hire_date) = EXTRACT(MONTH FROM SYSDATE);
+  from      employee   emp
+       join department dept using (department_id)
+ where extract(month from emp.hire_date) = extract(month from sysdate);
 </code></pre>
 
 <h2 id="example-subquery-bad">Example Subquery (bad)</h2>
-<p>If the <code>jobs</code> table has no <code>employee_id</code> column and <code>employees</code> has one this query will not raise an error but return all rows of the <code>employees</code> table as a subquery is allowed to access columns of all its parent tables - this construct is known as correlated subquery.</p>
-<pre><code>SELECT last_name
+<p>If the <code>job</code> table has no <code>employee_id</code> column and <code>employee</code> has one this query will not raise an error but return all rows of the <code>employee</code> table as a subquery is allowed to access columns of all its parent tables - this construct is known as correlated subquery.</p>
+<pre><code class="sql">select last_name
       ,first_name
-  FROM employees
- WHERE employee_id IN (SELECT employee_id
-                         FROM jobs
-                        WHERE job_title like '%Manager%');
+  from employee
+ where employee_id in (select employee_id
+                         from job
+                        where job_title like '%manager%');
 </code></pre>
 
 <h2 id="example-subquery-good">Example Subquery (good)</h2>
-<p>If the <code>jobs</code> table has no <code>employee_id</code> column this query will return an error due to the directive (given by adding the table alias to the column) to read the <code>employee_id</code> column from the <code>jobs</code> table.</p>
-<pre><code>SELECT emp.last_name
+<p>If the <code>job</code> table has no <code>employee_id</code> column this query will return an error due to the directive (given by adding the table alias to the column) to read the <code>employee_id</code> column from the <code>job</code> table.</p>
+<pre><code class="sql">select emp.last_name
       ,emp.first_name
-  FROM employees emp
- WHERE emp.employee_id IN (SELECT j.employee_id
-                             FROM jobs j
-                            WHERE j.job_title like '%Manager%');
+  from employee emp
+ where emp.employee_id in (select j.employee_id
+                             from job j
+                            where j.job_title like '%manager%');
 </code></pre>
                 
                   
@@ -2445,9 +2458,9 @@
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Trivadis" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/insum-labs" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/trivadis" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/insumsolutions" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

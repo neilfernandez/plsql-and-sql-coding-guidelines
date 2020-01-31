@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/4-language-usage/4-control-structures/1-cursor/g-4120/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/4-language-usage/4-control-structures/1-cursor/g-4120/">
       
       
       
@@ -98,9 +98,9 @@
     <nav class="md-header-nav md-grid">
       <div class="md-flex">
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
+          <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/trivadis-logo.svg" height="21">
+              <img src="../../../../images/insum-logo.png" height="31">
             
           </a>
         </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
             </div>
@@ -192,9 +192,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
+    <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/trivadis-logo.svg" width="48" height="48">
+        <img src="../../../../images/insum-logo.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
     </div>
@@ -328,8 +328,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1020/" title="G-1020: Always have a matching loop or block label." class="md-nav__link">
-      G-1020: Always have a matching loop or block label.
+    <a href="../../../1-general/g-1020/" title="G-1020: Have a matching loop or block label." class="md-nav__link">
+      G-1020: Have a matching loop or block label.
     </a>
   </li>
 
@@ -352,8 +352,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1040/" title="G-1040: Avoid dead code." class="md-nav__link">
-      G-1040: Avoid dead code.
+    <a href="../../../1-general/g-1040/" title="G-1040: Always avoid dead code." class="md-nav__link">
+      G-1040: Always avoid dead code.
     </a>
   </li>
 
@@ -580,18 +580,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/2-numeric-data-types/g-2210/" title="G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision." class="md-nav__link">
-      G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision.
-    </a>
-  </li>
-
         
           
           
@@ -913,6 +901,18 @@
   <li class="md-nav__item">
     <a href="../../../3-dml-and-sql/1-general/g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-nav__link">
       G-3190: Avoid using NATURAL JOIN.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+      G-3200: Never use an ON clause when USING will work.
     </a>
   </li>
 
@@ -1387,8 +1387,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Try to use a error/logging framework for your application." class="md-nav__link">
-      G-5010: Try to use a error/logging framework for your application.
+    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Always use an error/logging framework for your application." class="md-nav__link">
+      G-5010: Always use an error/logging framework for your application.
     </a>
   </li>
 
@@ -1688,6 +1688,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/2-packages/g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link">
+      G-7250: Always use NOCOPY when appropriate
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1912,6 +1924,30 @@
   <li class="md-nav__item">
     <a href="../../../7-stored-objects/7-triggers/g-7710/" title="G-7710: Avoid cascading triggers." class="md-nav__link">
       G-7710: Avoid cascading triggers.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7720/" title="G-7720: Avoid triggers for business logic" class="md-nav__link">
+      G-7720: Avoid triggers for business logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7730/" title="G-7730: If using triggers, use compound triggers" class="md-nav__link">
+      G-7730: If using triggers, use compound triggers
     </a>
   </li>
 
@@ -2207,30 +2243,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../7-tool-support/tool-support/" title="Tool Support" class="md-nav__link">
-      Tool Support
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
-      Appendix
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2302,95 +2314,95 @@
 <p>Reliability</p>
 </div>
 <h2 id="reason">Reason</h2>
-<p><code>%NOTFOUND</code> is set to <code>TRUE</code> as soon as less than the number of rows defined by the <code>LIMIT</code> clause has been read.</p>
+<p><code>%notfound</code> is set to <code>true</code> as soon as less than the number of rows defined by the <code>limit</code> clause has been read.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<p>The employees table holds 107 rows. The example below will only show 100 rows as the cursor attribute <code>NOTFOUND</code> is set to true as soon as the number of rows to be fetched defined by the limit clause is not fulfilled anymore.</p>
-<pre><code>DECLARE
-   CURSOR c_employees IS 
-      SELECT *
-        FROM employees
-       ORDER BY employee_id;
+<p>The employee table holds 107 rows. The example below will only show 100 rows as the cursor attribute <code>notfound</code> is set to true as soon as the number of rows to be fetched defined by the limit clause is not fulfilled anymore.</p>
+<pre><code class="sql">declare
+   cursor c_employee is 
+      select *
+        from employee
+       order by employee_id;
 
-   TYPE t_employees_type IS TABLE OF c_employees%ROWTYPE;
-   t_employees t_employees_type;
-   co_bulk_size CONSTANT SIMPLE_INTEGER := 10;
-BEGIN
-   OPEN c_employees;
+   type t_employee_type is table of c_employee%rowtype;
+   t_employee t_employee_type;
+   k_bulk_size constant simple_integer := 10;
+begin
+   open c_employee;
 
    &lt;&lt;process_employees&gt;&gt;
-   LOOP
-      FETCH c_employees BULK COLLECT INTO t_employees LIMIT co_bulk_size;
-      EXIT process_employees WHEN c_employees%NOTFOUND;
+   loop
+      fetch c_employee bulk collect into t_employee limit k_bulk_size;
+      exit process_employees when c_employee%notfound;
 
       &lt;&lt;display_employees&gt;&gt;
-      FOR i IN 1..t_employees.COUNT()
-      LOOP
-         sys.dbms_output.put_line(t_employees(i).last_name);
-      END LOOP display_employees;
-   END LOOP process_employees;
+      for i in 1..t_employee.count()
+      loop
+         sys.dbms_output.put_line(t_employee(i).last_name);
+      end loop display_employees;
+   end loop process_employees;
 
-   CLOSE c_employees;
-END;
+   close c_employee;
+end;
 /
 </code></pre>
 
 <h2 id="example-better">Example (better)</h2>
 <p>This example will show all 107 rows but execute one fetch too much (12 instead of 11).</p>
-<pre><code>DECLARE
-   CURSOR c_employees IS 
-      SELECT *
-        FROM employees
-       ORDER BY employee_id;
+<pre><code class="sql">declare
+   cursor c_employee is 
+      select *
+        from employee
+       order by employee_id;
 
-   TYPE t_employees_type IS TABLE OF c_employees%ROWTYPE;
-   t_employees t_employees_type;
-   co_bulk_size CONSTANT SIMPLE_INTEGER := 10;
-BEGIN
-   OPEN c_employees;
+   type t_employee_type is table of c_employee%rowtype;
+   t_employee t_employee_type;
+   k_bulk_size constant simple_integer := 10;
+begin
+   open c_employee;
 
    &lt;&lt;process_employees&gt;&gt;
-   LOOP
-      FETCH c_employees BULK COLLECT INTO t_employees LIMIT co_bulk_size;
-      EXIT process_employees WHEN t_employees.COUNT() = 0;
+   loop
+      fetch c_employee bulk collect into t_employee limit k_bulk_size;
+      exit process_employees when t_employee.count() = 0;
       &lt;&lt;display_employees&gt;&gt;
-      FOR i IN 1..t_employees.COUNT()
-      LOOP
-         sys.dbms_output.put_line(t_employees(i).last_name);
-      END LOOP display_employees;
-   END LOOP process_employees;
+      for i in 1..t_employee.count()
+      loop
+         sys.dbms_output.put_line(t_employee(i).last_name);
+      end loop display_employees;
+   end loop process_employees;
 
-   CLOSE c_employees;
-END;
+   close c_employee;
+end;
 /
 </code></pre>
 
 <h2 id="example-good">Example (good)</h2>
 <p>This example does the trick (11 fetches only to process all rows)</p>
-<pre><code>DECLARE
-   CURSOR c_employees IS 
-      SELECT *
-        FROM employees
-       ORDER BY employee_id;
+<pre><code class="sql">declare
+   cursor c_employee is 
+      select *
+        from employee
+       order by employee_id;
 
-   TYPE t_employees_type IS TABLE OF c_employees%ROWTYPE;
-   t_employees t_employees_type;
-   co_bulk_size CONSTANT SIMPLE_INTEGER := 10;
-BEGIN
-   OPEN c_employees;
+   type t_employee_type is table of c_employee%rowtype;
+   t_employee t_employee_type;
+   k_bulk_size constant simple_integer := 10;
+begin
+   open c_employee;
 
    &lt;&lt;process_employees&gt;&gt;
-   LOOP
-      FETCH c_employees BULK COLLECT INTO t_employees LIMIT co_bulk_size;
+   loop
+      fetch c_employee bulk collect into t_employee limit k_bulk_size;
       &lt;&lt;display_employees&gt;&gt;
-      FOR i IN 1..t_employees.COUNT()
-      LOOP
-         sys.dbms_output.put_line(t_employees(i).last_name);
-      END LOOP display_employees;
-      EXIT process_employees WHEN t_employees.COUNT() &lt;&gt; co_bulk_size;
-   END LOOP process_employees;
+      for i in 1..t_employee.count()
+      loop
+         sys.dbms_output.put_line(t_employee(i).last_name);
+      end loop display_employees;
+      exit process_employees when t_employee.count() &lt;&gt; k_bulk_size;
+   end loop process_employees;
 
-   CLOSE c_employees;
-END;
+   close c_employee;
+end;
 /
 </code></pre>
                 
@@ -2459,9 +2471,9 @@ END;
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Trivadis" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/insum-labs" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/trivadis" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/insumsolutions" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

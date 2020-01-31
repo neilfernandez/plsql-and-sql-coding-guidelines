@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/4-language-usage/4-control-structures/1-cursor/g-4140/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/4-language-usage/4-control-structures/1-cursor/g-4140/">
       
       
       
@@ -98,9 +98,9 @@
     <nav class="md-header-nav md-grid">
       <div class="md-flex">
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
+          <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/trivadis-logo.svg" height="21">
+              <img src="../../../../images/insum-logo.png" height="31">
             
           </a>
         </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
             </div>
@@ -192,9 +192,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
+    <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/trivadis-logo.svg" width="48" height="48">
+        <img src="../../../../images/insum-logo.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
     </div>
@@ -328,8 +328,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1020/" title="G-1020: Always have a matching loop or block label." class="md-nav__link">
-      G-1020: Always have a matching loop or block label.
+    <a href="../../../1-general/g-1020/" title="G-1020: Have a matching loop or block label." class="md-nav__link">
+      G-1020: Have a matching loop or block label.
     </a>
   </li>
 
@@ -352,8 +352,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1040/" title="G-1040: Avoid dead code." class="md-nav__link">
-      G-1040: Avoid dead code.
+    <a href="../../../1-general/g-1040/" title="G-1040: Always avoid dead code." class="md-nav__link">
+      G-1040: Always avoid dead code.
     </a>
   </li>
 
@@ -580,18 +580,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/2-numeric-data-types/g-2210/" title="G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision." class="md-nav__link">
-      G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision.
-    </a>
-  </li>
-
         
           
           
@@ -913,6 +901,18 @@
   <li class="md-nav__item">
     <a href="../../../3-dml-and-sql/1-general/g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-nav__link">
       G-3190: Avoid using NATURAL JOIN.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+      G-3200: Never use an ON clause when USING will work.
     </a>
   </li>
 
@@ -1380,8 +1380,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Try to use a error/logging framework for your application." class="md-nav__link">
-      G-5010: Try to use a error/logging framework for your application.
+    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Always use an error/logging framework for your application." class="md-nav__link">
+      G-5010: Always use an error/logging framework for your application.
     </a>
   </li>
 
@@ -1681,6 +1681,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/2-packages/g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link">
+      G-7250: Always use NOCOPY when appropriate
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1905,6 +1917,30 @@
   <li class="md-nav__item">
     <a href="../../../7-stored-objects/7-triggers/g-7710/" title="G-7710: Avoid cascading triggers." class="md-nav__link">
       G-7710: Avoid cascading triggers.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7720/" title="G-7720: Avoid triggers for business logic" class="md-nav__link">
+      G-7720: Avoid triggers for business logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../7-stored-objects/7-triggers/g-7730/" title="G-7730: If using triggers, use compound triggers" class="md-nav__link">
+      G-7730: If using triggers, use compound triggers
     </a>
   </li>
 
@@ -2200,30 +2236,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../7-tool-support/tool-support/" title="Tool Support" class="md-nav__link">
-      Tool Support
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
-      Appendix
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2288,63 +2300,63 @@
 <p>Reliability</p>
 </div>
 <h2 id="reason">Reason</h2>
-<p>Oracle provides a variety of cursor attributes (like <code>%FOUND</code> and <code>%ROWCOUNT</code>) that can be used to obtain information about the status of a cursor, either implicit or explicit. </p>
+<p>Oracle provides a variety of cursor attributes (like <code>%found</code> and <code>%rowcount</code>) that can be used to obtain information about the status of a cursor, either implicit or explicit. </p>
 <p>You should avoid inserting any statements between the cursor operation and the use of an attribute against that cursor. Interposing such a statement can affect the value returned by the attribute, thereby potentially corrupting the logic of your program. </p>
-<p>In the following example, a procedure call is inserted between the DELETE statement and a check for the value of <code>SQL%ROWCOUNT</code>, which returns the number of rows modified by that last SQL statement executed in the session. If this procedure includes a <code>COMMIT</code> / <code>ROLLBACK</code> or another implicit cursor the value of <code>SQL%ROWCOUNT</code> is affected.</p>
+<p>In the following example, a procedure call is inserted between the DELETE statement and a check for the value of <code>sql%rowcount</code>, which returns the number of rows modified by that last SQL statement executed in the session. If this procedure includes a <code>commit</code> / <code>rollback</code> or another implicit cursor the value of <code>sql%rowcount</code> is affected.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code>CREATE OR REPLACE PACKAGE BODY employee_api AS
-   co_one CONSTANT SIMPLE_INTEGER := 1;
+<pre><code class="sql">create or replace package body employee_api as
+   k_one constant simple_integer := 1;
 
-   PROCEDURE process_dept(in_dept_id IN departments.department_id%TYPE) IS
-   BEGIN
-      NULL;
-   END process_dept;
+   procedure process_dept(in_dept_id in departments.department_id%type) is
+   begin
+      null;
+   end process_dept;
 
-   PROCEDURE remove_employee (in_employee_id IN employees.employee_id%TYPE) IS
-      l_dept_id      employees.department_id%TYPE;
-   BEGIN
-      DELETE FROM employees
-       WHERE employee_id = in_employee_id
-       RETURNING department_id INTO l_dept_id;
+   procedure remove_employee (in_employee_id in employee.employee_id%type) is
+      l_dept_id      employee.department_id%type;
+   begin
+      delete from employee
+       where employee_id = in_employee_id
+       returning department_id into l_dept_id;
 
       process_dept(in_dept_id =&gt; l_dept_id);
 
-      IF SQL%ROWCOUNT &gt; co_one THEN
+      if sql%rowcount &gt; k_one then
          -- too many rows deleted. 
-         ROLLBACK;
-      END IF;
-   END remove_employee;
-END employee_api;
+         rollback;
+      end if;
+   end remove_employee;
+end employee_api;
 /
 </code></pre>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code>CREATE OR REPLACE PACKAGE BODY employee_api AS
-   co_one CONSTANT SIMPLE_INTEGER := 1;
+<pre><code class="sql">create or replace package body employee_api as
+   k_one constant simple_integer := 1;
 
-   PROCEDURE process_dept(in_dept_id IN departments.department_id%TYPE) IS
-   BEGIN
-      NULL;
-   END process_dept;
+   procedure process_dept(in_dept_id in departments.department_id%type) is
+   begin
+      null;
+   end process_dept;
 
-   PROCEDURE remove_employee (in_employee_id IN employees.employee_id%TYPE) IS
-      l_dept_id      employees.department_id%TYPE;
-      l_deleted_emps SIMPLE_INTEGER;
-   BEGIN
-      DELETE FROM employees
-       WHERE employee_id = in_employee_id
-       RETURNING department_id INTO l_dept_id;
+   procedure remove_employee (in_employee_id in employee.employee_id%type) is
+      l_dept_id      employee.department_id%type;
+      l_deleted_emps simple_integer;
+   begin
+      delete from employee
+       where employee_id = in_employee_id
+       returning department_id into l_dept_id;
 
-      l_deleted_emps := SQL%ROWCOUNT;
+      l_deleted_emps := sql%rowcount;
 
       process_dept(in_dept_id =&gt; l_dept_id);
 
-      IF l_deleted_emps &gt; co_one THEN
+      if l_deleted_emps &gt; k_one then
          -- too many rows deleted. 
-         ROLLBACK;
-      END IF;
-   END remove_employee;
-END employee_api;
+         rollback;
+      end if;
+   end remove_employee;
+end employee_api;
 /
 </code></pre>
                 
@@ -2413,9 +2425,9 @@ END employee_api;
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Trivadis" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/insum-labs" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/trivadis" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/insumsolutions" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 

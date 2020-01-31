@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/4-language-usage/7-stored-objects/2-packages/g-7240/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/4-language-usage/7-stored-objects/2-packages/g-7240/">
       
       
       
@@ -98,9 +98,9 @@
     <nav class="md-header-nav md-grid">
       <div class="md-flex">
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
+          <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/trivadis-logo.svg" height="21">
+              <img src="../../../../images/insum-logo.png" height="31">
             
           </a>
         </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
             </div>
@@ -192,9 +192,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://trivadis.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
+    <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/trivadis-logo.svg" width="48" height="48">
+        <img src="../../../../images/insum-logo.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/trivadis/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/insum-labs/plsql-and-sql-coding-guidelines" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    trivadis/plsql-and-sql-coding-guidelines
+    insum-labs/plsql-and-sql-coding-guidelines
   </div>
 </a>
     </div>
@@ -328,8 +328,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1020/" title="G-1020: Always have a matching loop or block label." class="md-nav__link">
-      G-1020: Always have a matching loop or block label.
+    <a href="../../../1-general/g-1020/" title="G-1020: Have a matching loop or block label." class="md-nav__link">
+      G-1020: Have a matching loop or block label.
     </a>
   </li>
 
@@ -352,8 +352,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-general/g-1040/" title="G-1040: Avoid dead code." class="md-nav__link">
-      G-1040: Avoid dead code.
+    <a href="../../../1-general/g-1040/" title="G-1040: Always avoid dead code." class="md-nav__link">
+      G-1040: Always avoid dead code.
     </a>
   </li>
 
@@ -580,18 +580,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/2-numeric-data-types/g-2210/" title="G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision." class="md-nav__link">
-      G-2210: Avoid declaring NUMBER variables, constants or subtypes with no precision.
-    </a>
-  </li>
-
         
           
           
@@ -913,6 +901,18 @@
   <li class="md-nav__item">
     <a href="../../../3-dml-and-sql/1-general/g-3190/" title="G-3190: Avoid using NATURAL JOIN." class="md-nav__link">
       G-3190: Avoid using NATURAL JOIN.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
+      G-3200: Never use an ON clause when USING will work.
     </a>
   </li>
 
@@ -1324,8 +1324,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Try to use a error/logging framework for your application." class="md-nav__link">
-      G-5010: Try to use a error/logging framework for your application.
+    <a href="../../../5-exception-handling/g-5010/" title="G-5010: Always use an error/logging framework for your application." class="md-nav__link">
+      G-5010: Always use an error/logging framework for your application.
     </a>
   </li>
 
@@ -1681,6 +1681,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link">
+      G-7250: Always use NOCOPY when appropriate
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1905,6 +1917,30 @@
   <li class="md-nav__item">
     <a href="../../7-triggers/g-7710/" title="G-7710: Avoid cascading triggers." class="md-nav__link">
       G-7710: Avoid cascading triggers.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7-triggers/g-7720/" title="G-7720: Avoid triggers for business logic" class="md-nav__link">
+      G-7720: Avoid triggers for business logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7-triggers/g-7730/" title="G-7730: If using triggers, use compound triggers" class="md-nav__link">
+      G-7730: If using triggers, use compound triggers
     </a>
   </li>
 
@@ -2200,30 +2236,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../7-tool-support/tool-support/" title="Tool Support" class="md-nav__link">
-      Tool Support
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
-      Appendix
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2288,79 +2300,78 @@
 <p>Efficiency, Maintainability</p>
 </div>
 <h2 id="reason">Reason</h2>
-<p>By showing the mode of parameters, you help the reader. If you do not specify a parameter mode, the default mode is <code>IN</code>. Explicitly showing the mode indication of all parameters is a more assertive action than simply taking the default mode. Anyone reviewing the code later will be more confident that you intended the parameter mode to be <code>IN</code> / <code>OUT</code>.</p>
+<p>By showing the mode of parameters, you help the reader. If you do not specify a parameter mode, the default mode is <code>in</code>. Explicitly showing the mode indication of all parameters is a more assertive action than simply taking the default mode. Anyone reviewing the code later will be more confident that you intended the parameter mode to be <code>in</code> / <code>out</code>.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code>-- Bad
-CREATE OR REPLACE PACKAGE BODY employee_up IS
-   PROCEDURE rcv_emp (io_first_name     IN OUT employees.first_name%TYPE
-                     ,io_last_name      IN OUT employees.last_name%TYPE 
-                     ,io_email          IN OUT employees.email%TYPE 
-                     ,io_phone_number   IN OUT employees.phone_number%TYPE
-                     ,io_hire_date      IN OUT employees.hire_date%TYPE 
-                     ,io_job_id         IN OUT employees.job_id%TYPE
-                     ,io_salary         IN OUT employees.salary%TYPE
-                     ,io_commission_pct IN OUT employees.commission_pct%TYPE 
-                     ,io_manager_id     IN OUT employees.manager_id%TYPE
-                     ,io_department_id  IN OUT employees.department_id%TYPE
-                     ,in_wait                  INTEGER) IS
-      l_status PLS_INTEGER;
-      co_dflt_pipe_name CONSTANT STRING(30 CHAR) := 'MyPipe';
-      co_ok CONSTANT PLS_INTEGER := 1;
-   BEGIN
-      -- Receive next message and unpack for each column. 
-      l_status := SYS.dbms_pipe.receive_message(pipename =&gt; co_dflt_pipe_name
+<pre><code class="sql">create or replace package body employee_up is
+   procedure rcv_emp (io_first_name     in out employee.first_name%type
+                     ,io_last_name      in out employee.last_name%type 
+                     ,io_email          in out employee.email%type 
+                     ,io_phone_number   in out employee.phone_number%type
+                     ,io_hire_date      in out employee.hire_date%type 
+                     ,io_job_id         in out employee.job_id%type
+                     ,io_salary         in out employee.salary%type
+                     ,io_commission_pct in out employee.commission_pct%type 
+                     ,io_manager_id     in out employee.manager_id%type
+                     ,io_department_id  in out employee.department_id%type
+                     ,in_wait                  integer) is
+      l_status pls_integer;
+      k_pipe_name constant string(6 char) := 'mypipe';
+      k_ok constant pls_integer := 1;
+   begin
+      -- receive next message and unpack for each column. 
+      l_status := sys.dbms_pipe.receive_message(pipename =&gt; k_pipe_name
                                                ,timeout  =&gt; in_wait);
-      IF l_status = co_ok THEN
-         SYS.dbms_pipe.unpack_message (io_first_name);
-         SYS.dbms_pipe.unpack_message (io_last_name);
-         SYS.dbms_pipe.unpack_message (io_email);
-         SYS.dbms_pipe.unpack_message (io_phone_number);
-         SYS.dbms_pipe.unpack_message (io_hire_date);
-         SYS.dbms_pipe.unpack_message (io_job_id);
-         SYS.dbms_pipe.unpack_message (io_salary);
-         SYS.dbms_pipe.unpack_message (io_commission_pct);
-         SYS.dbms_pipe.unpack_message (io_manager_id);
-         SYS.dbms_pipe.unpack_message (io_department_id);
-      END IF;
-   END rcv_emp;
-END employee_up;
+      if l_status = k_ok then
+         sys.dbms_pipe.unpack_message (io_first_name);
+         sys.dbms_pipe.unpack_message (io_last_name);
+         sys.dbms_pipe.unpack_message (io_email);
+         sys.dbms_pipe.unpack_message (io_phone_number);
+         sys.dbms_pipe.unpack_message (io_hire_date);
+         sys.dbms_pipe.unpack_message (io_job_id);
+         sys.dbms_pipe.unpack_message (io_salary);
+         sys.dbms_pipe.unpack_message (io_commission_pct);
+         sys.dbms_pipe.unpack_message (io_manager_id);
+         sys.dbms_pipe.unpack_message (io_department_id);
+      end if;
+   end rcv_emp;
+end employee_up;
 /
 </code></pre>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code>CREATE OR REPLACE PACKAGE BODY employee_up IS
-   PROCEDURE rcv_emp (OUT_first_name     OUT employees.first_name%TYPE
-                     ,OUT_last_name      OUT employees.last_name%TYPE 
-                     ,OUT_email          OUT employees.email%TYPE 
-                     ,OUT_phone_number   OUT employees.phone_number%TYPE
-                     ,OUT_hire_date      OUT employees.hire_date%TYPE 
-                     ,OUT_job_id         OUT employees.job_id%TYPE
-                     ,OUT_salary         OUT employees.salary%TYPE
-                     ,OUT_commission_pct OUT employees.commission_pct%TYPE 
-                     ,OUT_manager_id     OUT employees.manager_id%TYPE
-                     ,OUT_department_id  OUT employees.department_id%TYPE
-                     ,in_wait            IN     INTEGER) IS
-      l_status PLS_INTEGER;
-      co_dflt_pipe_name CONSTANT STRING(30 CHAR) := 'MyPipe';
-      co_ok CONSTANT PLS_INTEGER := 1;
-   BEGIN
-      -- Receive next message and unpack for each column. 
-      l_status := SYS.dbms_pipe.receive_message(pipename =&gt; co_dflt_pipe_name
+<pre><code class="sql">create or replace package body employee_up is
+   procedure rcv_emp (out_first_name     out employee.first_name%type
+                     ,out_last_name      out employee.last_name%type 
+                     ,out_email          out employee.email%type 
+                     ,out_phone_number   out employee.phone_number%type
+                     ,out_hire_date      out employee.hire_date%type 
+                     ,out_job_id         out employee.job_id%type
+                     ,out_salary         out employee.salary%type
+                     ,out_commission_pct out employee.commission_pct%type 
+                     ,out_manager_id     out employee.manager_id%type
+                     ,out_department_id  out employee.department_id%type
+                     ,in_wait            in  integer) is
+      l_status pls_integer;
+      k_pipe_name constant string(6 char) := 'mypipe';
+      k_ok constant pls_integer := 1;
+   begin
+      -- receive next message and unpack for each column. 
+      l_status := sys.dbms_pipe.receive_message(pipename =&gt; k_pipe_name
                                                ,timeout  =&gt; in_wait);
-      IF l_status = co_ok THEN
-         SYS.dbms_pipe.unpack_message (out_first_name);
-         SYS.dbms_pipe.unpack_message (out_last_name);
-         SYS.dbms_pipe.unpack_message (out_email);
-         SYS.dbms_pipe.unpack_message (out_phone_number);
-         SYS.dbms_pipe.unpack_message (out_hire_date);
-         SYS.dbms_pipe.unpack_message (out_job_id);
-         SYS.dbms_pipe.unpack_message (out_salary);
-         SYS.dbms_pipe.unpack_message (out_commission_pct);
-         SYS.dbms_pipe.unpack_message (out_manager_id);
-         SYS.dbms_pipe.unpack_message (out_department_id);
-      END IF;
-   END rcv_emp;
-END employee_up;
+      if l_status = k_ok then
+         sys.dbms_pipe.unpack_message (out_first_name);
+         sys.dbms_pipe.unpack_message (out_last_name);
+         sys.dbms_pipe.unpack_message (out_email);
+         sys.dbms_pipe.unpack_message (out_phone_number);
+         sys.dbms_pipe.unpack_message (out_hire_date);
+         sys.dbms_pipe.unpack_message (out_job_id);
+         sys.dbms_pipe.unpack_message (out_salary);
+         sys.dbms_pipe.unpack_message (out_commission_pct);
+         sys.dbms_pipe.unpack_message (out_manager_id);
+         sys.dbms_pipe.unpack_message (out_department_id);
+      end if;
+   end rcv_emp;
+end employee_up;
 /
 </code></pre>
                 
@@ -2398,13 +2409,13 @@ END employee_up;
           </a>
         
         
-          <a href="../../3-procedures/g-7310/" title="G-7310: Avoid standalone procedures – put your procedures in packages." class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../g-7250/" title="G-7250: Always use NOCOPY when appropriate" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                G-7310: Avoid standalone procedures – put your procedures in packages.
+                G-7250: Always use NOCOPY when appropriate
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2429,9 +2440,9 @@ END employee_up;
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/Trivadis" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/insum-labs" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/trivadis" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/insumsolutions" class="md-footer-social__link fa fa-twitter"></a>
     
   </div>
 
