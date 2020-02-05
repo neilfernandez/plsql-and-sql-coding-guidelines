@@ -1,0 +1,41 @@
+site_name: PL/SQL & SQL Coding Guidelines
+site_url: https://insum-labs.github.io/plsql-and-sql-coding-guidelines/
+
+repo_name: insum-labs/plsql-and-sql-coding-guidelines
+repo_url: https://github.com/insum-labs/plsql-and-sql-coding-guidelines
+edit_uri: ""
+
+theme:
+  name: 'material'
+  custom_dir: custom-theme
+  logo: images/insum-logo.png
+  favicon: images/favicon.ico
+  palette:
+    primary: 'light-green'
+    accent: 'green'
+
+extra_css:
+  - 'stylesheets/extra.css'
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - pymdownx.arithmatex
+  - footnotes
+
+extra:
+  guideline_version: 1.0
+  social:
+    - type: github-alt
+      link: https://github.com/insum-labs
+    - type: twitter
+      link: https://twitter.com/insumsolutions
+
+plugins:
+  - search
+  - awesome-pages:
+      collapse_single_pages: false
