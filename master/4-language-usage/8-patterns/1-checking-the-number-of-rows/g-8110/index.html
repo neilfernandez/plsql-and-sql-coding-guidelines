@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/insum-logo.png" height="31">
+              <img src="../../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-8110: Never use SELECT COUNT(*) if you are only interested in the existence of a row.
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -491,8 +491,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2218,18 +2218,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2304,45 +2292,80 @@
 <p>If we do a select count(*) where rownum = 1 there is also some overhead as there are two context switches between the PL/SQL and SQL engines.</p>
 <p>See the following example for a better solution.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code class="sql">declare
-   l_count  pls_integer;
-   k_zero   constant simple_integer := 0;
-   k_salary constant employee.salary%type := 5000;
-begin
-   select count(*)
-     into l_count
-     from employee
-    where salary &lt; k_salary;
-    if l_count &gt; k_zero then
-       &lt;&lt;emp_loop&gt;&gt;
-       for r_emp in (select employee_id
-                       from employee)
-       loop
-          if r_emp.salary &lt; k_salary then
-             my_package.my_proc(in_employee_id =&gt; r_emp.employee_id); 
-          end if;
-       end loop emp_loop;
-    end if;
-end;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="n">l_count</span>  <span class="n">pls_integer</span><span class="p">;</span>
+   <span class="n">k_zero</span>   <span class="n">constant</span> <span class="n">simple_integer</span> <span class="p">:</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">k_salary</span> <span class="n">constant</span> <span class="n">employee</span><span class="p">.</span><span class="n">salary</span><span class="o">%</span><span class="k">type</span> <span class="p">:</span><span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
+<span class="k">begin</span>
+   <span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+     <span class="k">into</span> <span class="n">l_count</span>
+     <span class="k">from</span> <span class="n">employee</span>
+    <span class="k">where</span> <span class="n">salary</span> <span class="o">&lt;</span> <span class="n">k_salary</span><span class="p">;</span>
+    <span class="k">if</span> <span class="n">l_count</span> <span class="o">&gt;</span> <span class="n">k_zero</span> <span class="k">then</span>
+       <span class="o">&lt;&lt;</span><span class="n">emp_loop</span><span class="o">&gt;&gt;</span>
+       <span class="k">for</span> <span class="n">r_emp</span> <span class="k">in</span> <span class="p">(</span><span class="k">select</span> <span class="n">employee_id</span>
+                       <span class="k">from</span> <span class="n">employee</span><span class="p">)</span>
+       <span class="n">loop</span>
+          <span class="k">if</span> <span class="n">r_emp</span><span class="p">.</span><span class="n">salary</span> <span class="o">&lt;</span> <span class="n">k_salary</span> <span class="k">then</span>
+             <span class="n">my_package</span><span class="p">.</span><span class="n">my_proc</span><span class="p">(</span><span class="n">in_employee_id</span> <span class="o">=&gt;</span> <span class="n">r_emp</span><span class="p">.</span><span class="n">employee_id</span><span class="p">);</span> 
+          <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+       <span class="k">end</span> <span class="n">loop</span> <span class="n">emp_loop</span><span class="p">;</span>
+    <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code class="sql">declare
-   k_salary constant employee.salary%type := 5000;
-begin
-    &lt;&lt;emp_loop&gt;&gt;
-    for r_emp in (select e1.employee_id
-                    from employee e1
-                   where exists(select e2.salary
-                                  from employee e2
-                                 where e2.salary &lt; k_salary))
-    loop
-       my_package.my_proc(in_employee_id =&gt; r_emp.employee_id); 
-    end loop emp_loop;
-end;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="n">k_salary</span> <span class="n">constant</span> <span class="n">employee</span><span class="p">.</span><span class="n">salary</span><span class="o">%</span><span class="k">type</span> <span class="p">:</span><span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
+<span class="k">begin</span>
+    <span class="o">&lt;&lt;</span><span class="n">emp_loop</span><span class="o">&gt;&gt;</span>
+    <span class="k">for</span> <span class="n">r_emp</span> <span class="k">in</span> <span class="p">(</span><span class="k">select</span> <span class="n">e1</span><span class="p">.</span><span class="n">employee_id</span>
+                    <span class="k">from</span> <span class="n">employee</span> <span class="n">e1</span>
+                   <span class="k">where</span> <span class="k">exists</span><span class="p">(</span><span class="k">select</span> <span class="n">e2</span><span class="p">.</span><span class="n">salary</span>
+                                  <span class="k">from</span> <span class="n">employee</span> <span class="n">e2</span>
+                                 <span class="k">where</span> <span class="n">e2</span><span class="p">.</span><span class="n">salary</span> <span class="o">&lt;</span> <span class="n">k_salary</span><span class="p">))</span>
+    <span class="n">loop</span>
+       <span class="n">my_package</span><span class="p">.</span><span class="n">my_proc</span><span class="p">(</span><span class="n">in_employee_id</span> <span class="o">=&gt;</span> <span class="n">r_emp</span><span class="p">.</span><span class="n">employee_id</span><span class="p">);</span> 
+    <span class="k">end</span> <span class="n">loop</span> <span class="n">emp_loop</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

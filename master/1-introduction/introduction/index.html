@@ -38,7 +38,7 @@
     
     
       
-        <title>Introduction - PL/SQL & SQL Coding Guidelines</title>
+        <title>Document Conventions - PL/SQL & SQL Coding Guidelines</title>
       
     
     
@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#introduction" tabindex="1" class="md-skip">
+      <a href="#document-conventions" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../images/insum-logo.png" height="31">
+              <img src="../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,10 +112,10 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
-                  Introduction
+                  Document Conventions
                 </span>
               
             
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../images/insum-logo.png" width="48" height="48">
+        <img src="../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="About" class="md-nav__link">
-      About
+    <a href="../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -249,11 +249,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Introduction
+        Document Conventions
       </label>
     
-    <a href="./" title="Introduction" class="md-nav__link md-nav__link--active">
-      Introduction
+    <a href="./" title="Document Conventions" class="md-nav__link md-nav__link--active">
+      Document Conventions
     </a>
     
       
@@ -274,8 +274,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#document-conventions" class="md-nav__link">
-    Document Conventions
+  <a href="#sqale" class="md-nav__link">
+    SQALE
   </a>
   
     <nav class="md-nav">
@@ -298,13 +298,6 @@
           <li class="md-nav__item">
   <a href="#keywords-used" class="md-nav__link">
     Keywords used
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-are-standards-important" class="md-nav__link">
-    Why are standards important
   </a>
   
 </li>
@@ -568,8 +561,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4-language-usage/2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../4-language-usage/2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2239,18 +2232,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2285,8 +2266,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#document-conventions" class="md-nav__link">
-    Document Conventions
+  <a href="#sqale" class="md-nav__link">
+    SQALE
   </a>
   
     <nav class="md-nav">
@@ -2313,13 +2294,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#why-are-standards-important" class="md-nav__link">
-    Why are standards important
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2342,12 +2316,11 @@
               
                 
                 
-                <h1 id="introduction">Introduction</h1>
+                <h1 id="document-conventions">Document Conventions</h1>
 <p>This document describes rules and recommendations for developing applications using the PL/SQL &amp; SQL Language.</p>
-<p>SQL, including PL/SQL, code is fundamentally some of the most important code that Insum writes for our customers and partners. The difference between SQL that performs well and SQL that doesn't can be the difference between a successful system (our customers and partners) and a huge disappointment (Healthcare.gov's rollout for example, not done by Insum...).</p>
 <h2 id="scope">Scope</h2>
 <p>This document applies to the PL/SQL and SQL language as used within ORACLE databases and tools, which access ORACLE databases.</p>
-<h2 id="document-conventions">Document Conventions</h2>
+<h2 id="sqale">SQALE</h2>
 <p>SQALE (Software Quality Assessment based on Lifecycle Expectations) is a method to support the evaluation of a software application source code. It is a generic method, independent of the language and source code analysis tools.</p>
 <h3 id="sqale-characteristics-and-subcharacteristics">SQALE characteristics and subcharacteristics</h3>
 <table>
@@ -2452,18 +2425,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="why-are-standards-important">Why are standards important</h3>
-<p>For a machine executing a program, code formatting is of no importance. However, for the human eye, well-formatted code is much easier to read. Modern tools can help to implement format and coding rules.</p>
-<p>Implementing formatting and coding standards has the following advantages for PL/SQL development:</p>
-<ul>
-<li>Well-formatted code is easier to read, analyze and maintain (not only for the author but also for other developers).</li>
-<li>The developers do not have to define their own guidelines - it is already defined.</li>
-<li>The code has a structure that makes it easier to avoid making errors.</li>
-<li>The code is more efficient concerning performance and organization of the whole application.</li>
-<li>The code is more modular and thus easier to use for other applications.</li>
-</ul>
-<p>This document only defines possible standards. These standards are not written in stone, but are meant as guidelines. If standards already exist, and they are different from those in this document, it makes no sense to change them unless the existing standards have fundamental flaws that would decrease performance and/or significantly decrease the maintainability of code. Almost every system has a mixture of "code that follows the standards" and "code that doesn't follow the standards". Gental migration over time to follow a good set of reasonable standards will always be much better than giving up because standards were not followed in the past.</p>
-<p>Overall, the most important thing when writing good code is that you must be able to defend your work.</p>
                 
                   
                 
@@ -2484,7 +2445,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="About" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2493,7 +2454,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                About
+                Introduction to the Insum PL/SQL and SQL Coding Guidelines
               </span>
             </div>
           </a>

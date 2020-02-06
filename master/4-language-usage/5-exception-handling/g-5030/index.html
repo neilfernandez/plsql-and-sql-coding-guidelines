@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../images/insum-logo.png" height="31">
+              <img src="../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-5030: Never assign predefined exception names to user defined exceptions.
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -491,8 +491,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2216,18 +2216,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2301,59 +2289,106 @@
 <p>This is error-prone because your local declaration overrides the global declaration. While it is technically possible to use the same names, it causes confusion for others needing to read and maintain this code. Additionally, you will need to be very careful to use the prefix <code>standard</code> in front of any reference that needs to use Oracle’s default exception behavior.</p>
 <h2 id="example-bad">Example (bad)</h2>
 <p>Using the code below, we are not able to handle the no_data_found exception raised by the <code>select</code> statement as we have overwritten that exception handler. In addition, our exception handler doesn't have an exception number assigned, which should be raised when the SELECT statement does not find any rows.</p>
-<pre><code class="sql">declare
-   l_dummy dual.dummy%type;
-   no_data_found   exception;
-   k_rownum        constant simple_integer           := 0;
-   k_no_data_found constant types.short_text_type := 'no_data_found';
-begin
-   select dummy
-     into l_dummy
-     from dual
-    where rownum = k_rownum;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="n">l_dummy</span> <span class="n">dual</span><span class="p">.</span><span class="n">dummy</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+   <span class="n">no_data_found</span>   <span class="k">exception</span><span class="p">;</span>
+   <span class="n">k_rownum</span>        <span class="n">constant</span> <span class="n">simple_integer</span>           <span class="p">:</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">k_no_data_found</span> <span class="n">constant</span> <span class="n">types</span><span class="p">.</span><span class="n">short_text_type</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;no_data_found&#39;</span><span class="p">;</span>
+<span class="k">begin</span>
+   <span class="k">select</span> <span class="n">dummy</span>
+     <span class="k">into</span> <span class="n">l_dummy</span>
+     <span class="k">from</span> <span class="n">dual</span>
+    <span class="k">where</span> <span class="n">rownum</span> <span class="o">=</span> <span class="n">k_rownum</span><span class="p">;</span>
 
-   if l_dummy is null then 
-      raise no_data_found;
-   end if;
-exception
-   when no_data_found then
-      sys.dbms_output.put_line(k_no_data_found);
-end;
-/
+   <span class="k">if</span> <span class="n">l_dummy</span> <span class="k">is</span> <span class="k">null</span> <span class="k">then</span> 
+      <span class="n">raise</span> <span class="n">no_data_found</span><span class="p">;</span>
+   <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+<span class="k">exception</span>
+   <span class="k">when</span> <span class="n">no_data_found</span> <span class="k">then</span>
+      <span class="n">sys</span><span class="p">.</span><span class="n">dbms_output</span><span class="p">.</span><span class="n">put_line</span><span class="p">(</span><span class="n">k_no_data_found</span><span class="p">);</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
 
-Error report -
-ORA-01403: no data found
-ORA-06512: at line 5
-01403. 00000 -  &quot;no data found&quot;
-*Cause:    No data was found from the objects.
-*Action:   There was no data from the objects which may be due to end of fetch.
-
-</code></pre>
+<span class="n">Error</span> <span class="n">report</span> <span class="o">-</span>
+<span class="n">ORA</span><span class="o">-</span><span class="mi">01403</span><span class="p">:</span> <span class="k">no</span> <span class="k">data</span> <span class="k">found</span>
+<span class="n">ORA</span><span class="o">-</span><span class="mi">06512</span><span class="p">:</span> <span class="k">at</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="mi">01403</span><span class="p">.</span> <span class="mi">00000</span> <span class="o">-</span>  <span class="ss">&quot;no data found&quot;</span>
+<span class="o">*</span><span class="n">Cause</span><span class="p">:</span>    <span class="k">No</span> <span class="k">data</span> <span class="n">was</span> <span class="k">found</span> <span class="k">from</span> <span class="n">the</span> <span class="n">objects</span><span class="p">.</span>
+<span class="o">*</span><span class="n">Action</span><span class="p">:</span>   <span class="n">There</span> <span class="n">was</span> <span class="k">no</span> <span class="k">data</span> <span class="k">from</span> <span class="n">the</span> <span class="n">objects</span> <span class="n">which</span> <span class="n">may</span> <span class="n">be</span> <span class="n">due</span> <span class="k">to</span> <span class="k">end</span> <span class="k">of</span> <span class="k">fetch</span><span class="p">.</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code class="sql">declare
-   l_dummy dual.dummy%type;
-   empty_value     exception;
-   k_rownum        constant simple_integer           := 0;
-   k_empty_value   constant types.short_text_type := 'empty_value';
-   k_no_data_found constant types.short_text_type := 'no_data_found';
-begin
-   select dummy
-     into l_dummy
-     from dual
-    where rownum = k_rownum;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="n">l_dummy</span> <span class="n">dual</span><span class="p">.</span><span class="n">dummy</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+   <span class="n">empty_value</span>     <span class="k">exception</span><span class="p">;</span>
+   <span class="n">k_rownum</span>        <span class="n">constant</span> <span class="n">simple_integer</span>           <span class="p">:</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">k_empty_value</span>   <span class="n">constant</span> <span class="n">types</span><span class="p">.</span><span class="n">short_text_type</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;empty_value&#39;</span><span class="p">;</span>
+   <span class="n">k_no_data_found</span> <span class="n">constant</span> <span class="n">types</span><span class="p">.</span><span class="n">short_text_type</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;no_data_found&#39;</span><span class="p">;</span>
+<span class="k">begin</span>
+   <span class="k">select</span> <span class="n">dummy</span>
+     <span class="k">into</span> <span class="n">l_dummy</span>
+     <span class="k">from</span> <span class="n">dual</span>
+    <span class="k">where</span> <span class="n">rownum</span> <span class="o">=</span> <span class="n">k_rownum</span><span class="p">;</span>
 
-   if l_dummy is null then
-      raise empty_value;
-   end if;
-exception
-   when empty_value then
-      sys.dbms_output.put_line(k_empty_value);
-   when no_data_found then
-      sys.dbms_output.put_line(k_no_data_found);
-end;
-/
-</code></pre>
+   <span class="k">if</span> <span class="n">l_dummy</span> <span class="k">is</span> <span class="k">null</span> <span class="k">then</span>
+      <span class="n">raise</span> <span class="n">empty_value</span><span class="p">;</span>
+   <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+<span class="k">exception</span>
+   <span class="k">when</span> <span class="n">empty_value</span> <span class="k">then</span>
+      <span class="n">sys</span><span class="p">.</span><span class="n">dbms_output</span><span class="p">.</span><span class="n">put_line</span><span class="p">(</span><span class="n">k_empty_value</span><span class="p">);</span>
+   <span class="k">when</span> <span class="n">no_data_found</span> <span class="k">then</span>
+      <span class="n">sys</span><span class="p">.</span><span class="n">dbms_output</span><span class="p">.</span><span class="n">put_line</span><span class="p">(</span><span class="n">k_no_data_found</span><span class="p">);</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

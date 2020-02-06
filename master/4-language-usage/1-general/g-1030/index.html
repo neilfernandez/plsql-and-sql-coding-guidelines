@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../images/insum-logo.png" height="31">
+              <img src="../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-1030: Avoid defining variables that are not used.
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -545,8 +545,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2216,18 +2216,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2300,45 +2288,80 @@
 <h2 id="reason">Reason</h2>
 <p>Unused variables decrease the maintainability and readability of your code.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code class="sql">create or replace package body my_package is
-   procedure my_proc is
-      l_last_name  employee.last_name%type;
-      l_first_name employee.first_name%type;
-      k_department_id constant department.department_id%type := 10;
-      e_good exception;
-   begin
-      select e.last_name
-        into l_last_name
-        from employee e
-       where e.department_id = k_department_id;
-   exception
-      when no_data_found then null; -- handle_no_data_found;
-      when too_many_rows then null; -- handle_too_many_rows;
-   end my_proc;
-end my_package;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="n">package</span> <span class="n">body</span> <span class="n">my_package</span> <span class="k">is</span>
+   <span class="k">procedure</span> <span class="n">my_proc</span> <span class="k">is</span>
+      <span class="n">l_last_name</span>  <span class="n">employee</span><span class="p">.</span><span class="n">last_name</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+      <span class="n">l_first_name</span> <span class="n">employee</span><span class="p">.</span><span class="n">first_name</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+      <span class="n">k_department_id</span> <span class="n">constant</span> <span class="n">department</span><span class="p">.</span><span class="n">department_id</span><span class="o">%</span><span class="k">type</span> <span class="p">:</span><span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="n">e_good</span> <span class="k">exception</span><span class="p">;</span>
+   <span class="k">begin</span>
+      <span class="k">select</span> <span class="n">e</span><span class="p">.</span><span class="n">last_name</span>
+        <span class="k">into</span> <span class="n">l_last_name</span>
+        <span class="k">from</span> <span class="n">employee</span> <span class="n">e</span>
+       <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">department_id</span> <span class="o">=</span> <span class="n">k_department_id</span><span class="p">;</span>
+   <span class="k">exception</span>
+      <span class="k">when</span> <span class="n">no_data_found</span> <span class="k">then</span> <span class="k">null</span><span class="p">;</span> <span class="c1">-- handle_no_data_found;</span>
+      <span class="k">when</span> <span class="n">too_many_rows</span> <span class="k">then</span> <span class="k">null</span><span class="p">;</span> <span class="c1">-- handle_too_many_rows;</span>
+   <span class="k">end</span> <span class="n">my_proc</span><span class="p">;</span>
+<span class="k">end</span> <span class="n">my_package</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code class="sql">create or replace package body my_package is
-   procedure my_proc is
-      l_last_name  employee.last_name%type;
-      k_department_id constant department.department_id%type := 10;
-      e_good exception;
-   begin
-      select e.last_name
-        into l_last_name
-        from employee e
-       where e.department_id = k_department_id;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="n">package</span> <span class="n">body</span> <span class="n">my_package</span> <span class="k">is</span>
+   <span class="k">procedure</span> <span class="n">my_proc</span> <span class="k">is</span>
+      <span class="n">l_last_name</span>  <span class="n">employee</span><span class="p">.</span><span class="n">last_name</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+      <span class="n">k_department_id</span> <span class="n">constant</span> <span class="n">department</span><span class="p">.</span><span class="n">department_id</span><span class="o">%</span><span class="k">type</span> <span class="p">:</span><span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="n">e_good</span> <span class="k">exception</span><span class="p">;</span>
+   <span class="k">begin</span>
+      <span class="k">select</span> <span class="n">e</span><span class="p">.</span><span class="n">last_name</span>
+        <span class="k">into</span> <span class="n">l_last_name</span>
+        <span class="k">from</span> <span class="n">employee</span> <span class="n">e</span>
+       <span class="k">where</span> <span class="n">e</span><span class="p">.</span><span class="n">department_id</span> <span class="o">=</span> <span class="n">k_department_id</span><span class="p">;</span>
 
-      raise e_good;
-   exception
-      when no_data_found then null; -- handle_no_data_found;
-      when too_many_rows then null; -- handle_too_many_rows;
-   end my_proc;
-end my_package;
-/
-</code></pre>
+      <span class="n">raise</span> <span class="n">e_good</span><span class="p">;</span>
+   <span class="k">exception</span>
+      <span class="k">when</span> <span class="n">no_data_found</span> <span class="k">then</span> <span class="k">null</span><span class="p">;</span> <span class="c1">-- handle_no_data_found;</span>
+      <span class="k">when</span> <span class="n">too_many_rows</span> <span class="k">then</span> <span class="k">null</span><span class="p">;</span> <span class="c1">-- handle_too_many_rows;</span>
+   <span class="k">end</span> <span class="n">my_proc</span><span class="p">;</span>
+<span class="k">end</span> <span class="n">my_package</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

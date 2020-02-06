@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/insum-logo.png" height="31">
+              <img src="../../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-3170: Always use DEFAULT ON NULL declarations to assign default values to table columns if you refuse to store NULL values.
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -491,8 +491,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2225,18 +2225,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2318,40 +2306,70 @@
 <h2 id="reason">Reason</h2>
 <p>Default values have been nullifiable until ORACLE 12c. Meaning any tool sending null as a value for a column having a default value bypassed the default value. Starting with ORACLE 12c default definitions may have an <code>ON NULL</code> definition in addition, which will assign the default value in case of a null value too.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code class="sql">create table null_test (
-   test_case        number(2) not null
-  ,column_defaulted varchar2(10) default 'Default')
-/
-insert into null_test(test_case, column_defaulted) values (1,'value');
-insert into null_test(test_case, column_defaulted) values (2,default);
-insert into null_test(test_case, column_defaulted) values (3,null);
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="n">null_test</span> <span class="p">(</span>
+   <span class="n">test_case</span>        <span class="nb">number</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="p">,</span><span class="n">column_defaulted</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">default</span> <span class="s1">&#39;Default&#39;</span><span class="p">)</span>
+<span class="o">/</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">null_test</span><span class="p">(</span><span class="n">test_case</span><span class="p">,</span> <span class="n">column_defaulted</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;value&#39;</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">null_test</span><span class="p">(</span><span class="n">test_case</span><span class="p">,</span> <span class="n">column_defaulted</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">null_test</span><span class="p">(</span><span class="n">test_case</span><span class="p">,</span> <span class="n">column_defaulted</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
 
-select * from null_test;
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">null_test</span><span class="p">;</span>
 
-TEST_CASE  COLUMN_DEF
----------  -----------
-        1  Value
-        2  Default
-        3
-</code></pre>
+<span class="n">TEST_CASE</span>  <span class="n">COLUMN_DEF</span>
+<span class="c1">---------  -----------</span>
+        <span class="mi">1</span>  <span class="n">Value</span>
+        <span class="mi">2</span>  <span class="k">Default</span>
+        <span class="mi">3</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code class="sql">create table null_test (
-   test_case        number(2) not null
-  ,column_defaulted varchar2(10 char) default on null 'Default')
-/
-insert into null_test(test_case, column_defaulted) values (1,'value');
-insert into null_test(test_case, column_defaulted) values (2,default);
-insert into null_test(test_case, column_defaulted) values (3,null);
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="n">null_test</span> <span class="p">(</span>
+   <span class="n">test_case</span>        <span class="nb">number</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="p">,</span><span class="n">column_defaulted</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">10</span> <span class="nb">char</span><span class="p">)</span> <span class="k">default</span> <span class="k">on</span> <span class="k">null</span> <span class="s1">&#39;Default&#39;</span><span class="p">)</span>
+<span class="o">/</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">null_test</span><span class="p">(</span><span class="n">test_case</span><span class="p">,</span> <span class="n">column_defaulted</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;value&#39;</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">null_test</span><span class="p">(</span><span class="n">test_case</span><span class="p">,</span> <span class="n">column_defaulted</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="k">default</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">null_test</span><span class="p">(</span><span class="n">test_case</span><span class="p">,</span> <span class="n">column_defaulted</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
 
-SELECT * FROM null_test;
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">null_test</span><span class="p">;</span>
 
- TEST_CASE COLUMN_DEF
----------- ----------
-         1 Value     
-         2 Default   
-         3 Default
-</code></pre>
+ <span class="n">TEST_CASE</span> <span class="n">COLUMN_DEF</span>
+<span class="c1">---------- ----------</span>
+         <span class="mi">1</span> <span class="n">Value</span>     
+         <span class="mi">2</span> <span class="k">Default</span>   
+         <span class="mi">3</span> <span class="k">Default</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

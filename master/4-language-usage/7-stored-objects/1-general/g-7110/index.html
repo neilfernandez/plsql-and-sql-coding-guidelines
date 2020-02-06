@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/insum-logo.png" height="31">
+              <img src="../../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-7110: Try to use named notation when calling program units.
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -491,8 +491,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2218,18 +2218,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2303,24 +2291,38 @@
 <p>Named notation makes sure that changes to the signature of the called program unit do not affect your call.</p>
 <p>This is not needed for standard functions like (<code>to_char</code>, <code>to_date</code>, <code>nvl</code>, <code>round</code>, etc.) but should be followed for any other stored object having more than one parameter.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code class="sql">declare
-   r_employee employee%rowtype;
-   k_id constant employee.employee_id%type := 107;
-begin
-   employee_api.employee_by_id(r_employee, k_id);
-end;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="n">r_employee</span> <span class="n">employee</span><span class="o">%</span><span class="n">rowtype</span><span class="p">;</span>
+   <span class="n">k_id</span> <span class="n">constant</span> <span class="n">employee</span><span class="p">.</span><span class="n">employee_id</span><span class="o">%</span><span class="k">type</span> <span class="p">:</span><span class="o">=</span> <span class="mi">107</span><span class="p">;</span>
+<span class="k">begin</span>
+   <span class="n">employee_api</span><span class="p">.</span><span class="n">employee_by_id</span><span class="p">(</span><span class="n">r_employee</span><span class="p">,</span> <span class="n">k_id</span><span class="p">);</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code class="sql">declare
-   r_employee employee%rowtype;
-   k_id constant employee.employee_id%type := 107;
-begin
-   employee_api.employee_by_id(out_row =&gt; r_employee, in_employee_id =&gt; k_id);
-end;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="n">r_employee</span> <span class="n">employee</span><span class="o">%</span><span class="n">rowtype</span><span class="p">;</span>
+   <span class="n">k_id</span> <span class="n">constant</span> <span class="n">employee</span><span class="p">.</span><span class="n">employee_id</span><span class="o">%</span><span class="k">type</span> <span class="p">:</span><span class="o">=</span> <span class="mi">107</span><span class="p">;</span>
+<span class="k">begin</span>
+   <span class="n">employee_api</span><span class="p">.</span><span class="n">employee_by_id</span><span class="p">(</span><span class="n">out_row</span> <span class="o">=&gt;</span> <span class="n">r_employee</span><span class="p">,</span> <span class="n">in_employee_id</span> <span class="o">=&gt;</span> <span class="n">k_id</span><span class="p">);</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

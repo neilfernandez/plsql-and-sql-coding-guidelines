@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/insum-logo.png" height="31">
+              <img src="../../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-7730: If using triggers, use compound triggers
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -491,8 +491,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2218,18 +2218,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2302,44 +2290,78 @@
 <h2 id="reason">Reason</h2>
 <p>A single trigger is better than several</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code class="sql">create or replace trigger dept_i_trg
-before insert
-on dept
-for each row
-begin
-  :new.id = dept_seq.nextval;
-  :new.created_on := sysdate;
-  :new.created_by := sys_context('userenv','session_user');
-end;
-/
-create or replace trigger dept_u_trg
-before update
-on dept
-for each row
-begin
-  :new.updated_on := sysdate;
-  :new.updated_by := sys_context('userenv','session_user');
-end;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="k">trigger</span> <span class="n">dept_i_trg</span>
+<span class="k">before</span> <span class="k">insert</span>
+<span class="k">on</span> <span class="n">dept</span>
+<span class="k">for</span> <span class="k">each</span> <span class="k">row</span>
+<span class="k">begin</span>
+  <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">dept_seq</span><span class="p">.</span><span class="n">nextval</span><span class="p">;</span>
+  <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">created_on</span> <span class="p">:</span><span class="o">=</span> <span class="n">sysdate</span><span class="p">;</span>
+  <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">created_by</span> <span class="p">:</span><span class="o">=</span> <span class="n">sys_context</span><span class="p">(</span><span class="s1">&#39;userenv&#39;</span><span class="p">,</span><span class="s1">&#39;session_user&#39;</span><span class="p">);</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+<span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="k">trigger</span> <span class="n">dept_u_trg</span>
+<span class="k">before</span> <span class="k">update</span>
+<span class="k">on</span> <span class="n">dept</span>
+<span class="k">for</span> <span class="k">each</span> <span class="k">row</span>
+<span class="k">begin</span>
+  <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">updated_on</span> <span class="p">:</span><span class="o">=</span> <span class="n">sysdate</span><span class="p">;</span>
+  <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">updated_by</span> <span class="p">:</span><span class="o">=</span> <span class="n">sys_context</span><span class="p">(</span><span class="s1">&#39;userenv&#39;</span><span class="p">,</span><span class="s1">&#39;session_user&#39;</span><span class="p">);</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code class="sql">create or replace trigger dept_ui_trg
-before insert or update
-on dept
-for each row
-begin
-  if inserting then
-    :new.id = dept_seq.nextval;
-    :new.created_on := sysdate;
-    :new.created_by := sys_context('userenv','session_user');
-  elsif updating then
-    :new.updated_on := sysdate;
-    :new.updated_by := sys_context('userenv','session_user');
-  end if;
-end;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="k">trigger</span> <span class="n">dept_ui_trg</span>
+<span class="k">before</span> <span class="k">insert</span> <span class="k">or</span> <span class="k">update</span>
+<span class="k">on</span> <span class="n">dept</span>
+<span class="k">for</span> <span class="k">each</span> <span class="k">row</span>
+<span class="k">begin</span>
+  <span class="k">if</span> <span class="n">inserting</span> <span class="k">then</span>
+    <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">dept_seq</span><span class="p">.</span><span class="n">nextval</span><span class="p">;</span>
+    <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">created_on</span> <span class="p">:</span><span class="o">=</span> <span class="n">sysdate</span><span class="p">;</span>
+    <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">created_by</span> <span class="p">:</span><span class="o">=</span> <span class="n">sys_context</span><span class="p">(</span><span class="s1">&#39;userenv&#39;</span><span class="p">,</span><span class="s1">&#39;session_user&#39;</span><span class="p">);</span>
+  <span class="k">elsif</span> <span class="n">updating</span> <span class="k">then</span>
+    <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">updated_on</span> <span class="p">:</span><span class="o">=</span> <span class="n">sysdate</span><span class="p">;</span>
+    <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">updated_by</span> <span class="p">:</span><span class="o">=</span> <span class="n">sys_context</span><span class="p">(</span><span class="s1">&#39;userenv&#39;</span><span class="p">,</span><span class="s1">&#39;session_user&#39;</span><span class="p">);</span>
+  <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

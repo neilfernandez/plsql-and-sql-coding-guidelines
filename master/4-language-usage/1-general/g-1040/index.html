@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../images/insum-logo.png" height="31">
+              <img src="../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-1040: Always avoid dead code.
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -545,8 +545,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2216,18 +2216,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2300,66 +2288,122 @@
 <h2 id="reason">Reason</h2>
 <p>Any part of your code, which is no longer used or cannot be reached, should be eliminated from your programs to simplify the code.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code>declare
-   k_dept_purchasing constant departments.department_id%type := 30;
-begin
-   if 2=3 then
-      null; -- some dead code here
-   end if;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">declare</span>
+   <span class="nv">k_dept_purchasing</span> <span class="nv">constant</span> <span class="nv">departments</span>.<span class="nv">department_id</span><span class="o">%</span><span class="nv">type</span> :<span class="o">=</span> <span class="mi">30</span><span class="c1">;</span>
+<span class="nv">begin</span>
+   <span class="k">if</span> <span class="mi">2</span><span class="o">=</span><span class="mi">3</span> <span class="k">then</span>
+      <span class="nv">null</span><span class="c1">; -- some dead code here</span>
+   <span class="k">end</span> <span class="k">if</span><span class="c1">;</span>
 
-   null; -- some enabled code here
+   <span class="nv">null</span><span class="c1">; -- some enabled code here</span>
 
-   &lt;&lt;my_loop&gt;&gt;
-   loop
-      exit my_loop;    
-      null; -- some dead code here
-   end loop my_loop;
+   <span class="o">&lt;&lt;</span><span class="nv">my_loop</span><span class="o">&gt;&gt;</span>
+   <span class="k">loop</span>
+      <span class="k">exit</span> <span class="nv">my_loop</span><span class="c1">;    </span>
+      <span class="nv">null</span><span class="c1">; -- some dead code here</span>
+   <span class="k">end</span> <span class="k">loop</span> <span class="nv">my_loop</span><span class="c1">;</span>
 
-   null; -- some other enabled code here
+   <span class="nv">null</span><span class="c1">; -- some other enabled code here</span>
 
-   case 
-      when 1 = 1 and 'x' = 'y' then
-         null; -- some dead code here
-      else
-         null; -- some further enabled code here
-   end case;
+   <span class="nv">case</span> 
+      <span class="nv">when</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span> <span class="nv">and</span> <span class="s1">&#39;</span><span class="s">x</span><span class="s1">&#39;</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">y</span><span class="s1">&#39;</span> <span class="k">then</span>
+         <span class="nv">null</span><span class="c1">; -- some dead code here</span>
+      <span class="k">else</span>
+         <span class="nv">null</span><span class="c1">; -- some further enabled code here</span>
+   <span class="k">end</span> <span class="nv">case</span><span class="c1">;</span>
 
-   &lt;&lt;my_loop2&gt;&gt;
-   for r_emp in (select last_name
-                   from employee
-                  where department_id = k_dept_purchasing
-                     or commission_pct is not null 
-                    and 5=6) 
-                -- &quot;or commission_pct is not null&quot; is dead code 
-   loop
-      sys.dbms_output.put_line(r_emp.last_name);
-   end loop my_loop2;
+   <span class="o">&lt;&lt;</span><span class="nv">my_loop2</span><span class="o">&gt;&gt;</span>
+   <span class="k">for</span> <span class="nv">r_emp</span> <span class="nv">in</span> <span class="ss">(</span><span class="nv">select</span> <span class="nv">last_name</span>
+                   <span class="nv">from</span> <span class="nv">employee</span>
+                  <span class="nv">where</span> <span class="nv">department_id</span> <span class="o">=</span> <span class="nv">k_dept_purchasing</span>
+                     <span class="nv">or</span> <span class="nv">commission_pct</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">null</span> 
+                    <span class="nv">and</span> <span class="mi">5</span><span class="o">=</span><span class="mi">6</span><span class="ss">)</span> 
+                <span class="o">--</span> <span class="s2">&quot;</span><span class="s">or commission_pct is not null</span><span class="s2">&quot;</span> <span class="nv">is</span> <span class="nv">dead</span> <span class="nv">code</span> 
+   <span class="k">loop</span>
+      <span class="nv">sys</span>.<span class="nv">dbms_output</span>.<span class="nv">put_line</span><span class="ss">(</span><span class="nv">r_emp</span>.<span class="nv">last_name</span><span class="ss">)</span><span class="c1">;</span>
+   <span class="k">end</span> <span class="k">loop</span> <span class="nv">my_loop2</span><span class="c1">;</span>
 
-   return;
-   null; -- some dead code here
-end;
-/
-</code></pre>
+   <span class="k">return</span><span class="c1">;</span>
+   <span class="nv">null</span><span class="c1">; -- some dead code here</span>
+<span class="k">end</span><span class="c1">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code>declare
-   k_dept_admin constant dept.deptno%type := 10;
-begin
-   null; -- some enabled code here
-   null; -- some other enabled code here
-   null; -- some further enabled code here
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">declare</span>
+   <span class="nv">k_dept_admin</span> <span class="nv">constant</span> <span class="nv">dept</span>.<span class="nv">deptno</span><span class="o">%</span><span class="nv">type</span> :<span class="o">=</span> <span class="mi">10</span><span class="c1">;</span>
+<span class="nv">begin</span>
+   <span class="nv">null</span><span class="c1">; -- some enabled code here</span>
+   <span class="nv">null</span><span class="c1">; -- some other enabled code here</span>
+   <span class="nv">null</span><span class="c1">; -- some further enabled code here</span>
 
-   &lt;&lt;my_loop2&gt;&gt;
-   for r_emp in (select last_name
-                   from employee
-                  where department_id = k_dept_admin
-                     or commission_pct is not null) 
-   loop
-      sys.dbms_output.put_line(r_emp.last_name);
-   end loop my_loop2;
-end;
-/
-</code></pre>
+   <span class="o">&lt;&lt;</span><span class="nv">my_loop2</span><span class="o">&gt;&gt;</span>
+   <span class="k">for</span> <span class="nv">r_emp</span> <span class="nv">in</span> <span class="ss">(</span><span class="nv">select</span> <span class="nv">last_name</span>
+                   <span class="nv">from</span> <span class="nv">employee</span>
+                  <span class="nv">where</span> <span class="nv">department_id</span> <span class="o">=</span> <span class="nv">k_dept_admin</span>
+                     <span class="nv">or</span> <span class="nv">commission_pct</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">null</span><span class="ss">)</span> 
+   <span class="k">loop</span>
+      <span class="nv">sys</span>.<span class="nv">dbms_output</span>.<span class="nv">put_line</span><span class="ss">(</span><span class="nv">r_emp</span>.<span class="nv">last_name</span><span class="ss">)</span><span class="c1">;</span>
+   <span class="k">end</span> <span class="k">loop</span> <span class="nv">my_loop2</span><span class="c1">;</span>
+<span class="k">end</span><span class="c1">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

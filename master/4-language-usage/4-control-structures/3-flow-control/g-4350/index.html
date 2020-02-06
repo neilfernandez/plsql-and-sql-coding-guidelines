@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/insum-logo.png" height="31">
+              <img src="../../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-4350: Always use 1 as lower and COUNT() as upper bound when looping through a dense array.
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -491,8 +491,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2225,18 +2225,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2316,50 +2304,85 @@
 <h2 id="reason">Reason</h2>
 <p>Doing so will not raise a <code>value_error</code> if the array you are looping through is empty. If you want to use <code>first()..last()</code> you need to check the array for emptiness beforehand to avoid the raise of <code>value_error</code>.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code class="sql">declare
-   type t_employee_type is table of employee.employee_id%type;
-   t_employee t_employee_type := t_employee_type();
-begin
-   &lt;&lt;process_employees&gt;&gt;
-   for i in t_employee.first()..t_employee.last()
-   loop
-      sys.dbms_output.put_line(t_employee(i)); -- some processing
-   end loop process_employees;
-end;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="k">type</span> <span class="n">t_employee_type</span> <span class="k">is</span> <span class="k">table</span> <span class="k">of</span> <span class="n">employee</span><span class="p">.</span><span class="n">employee_id</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+   <span class="n">t_employee</span> <span class="n">t_employee_type</span> <span class="p">:</span><span class="o">=</span> <span class="n">t_employee_type</span><span class="p">();</span>
+<span class="k">begin</span>
+   <span class="o">&lt;&lt;</span><span class="n">process_employees</span><span class="o">&gt;&gt;</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">t_employee</span><span class="p">.</span><span class="k">first</span><span class="p">()..</span><span class="n">t_employee</span><span class="p">.</span><span class="k">last</span><span class="p">()</span>
+   <span class="n">loop</span>
+      <span class="n">sys</span><span class="p">.</span><span class="n">dbms_output</span><span class="p">.</span><span class="n">put_line</span><span class="p">(</span><span class="n">t_employee</span><span class="p">(</span><span class="n">i</span><span class="p">));</span> <span class="c1">-- some processing</span>
+   <span class="k">end</span> <span class="n">loop</span> <span class="n">process_employees</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-better">Example (better)</h2>
 <p>Raise an unitialized collection error if <code>t_employee</code> is not initialized.</p>
-<pre><code class="sql">declare
-   type t_employee_type is table of employee.employee_id%type;
-   t_employee t_employee_type := t_employee_type();
-begin
-   &lt;&lt;process_employees&gt;&gt;
-   for i in 1..t_employee.count()
-   loop
-      sys.dbms_output.put_line(t_employee(i)); -- some processing
-   end loop process_employees;
-end;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="k">type</span> <span class="n">t_employee_type</span> <span class="k">is</span> <span class="k">table</span> <span class="k">of</span> <span class="n">employee</span><span class="p">.</span><span class="n">employee_id</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+   <span class="n">t_employee</span> <span class="n">t_employee_type</span> <span class="p">:</span><span class="o">=</span> <span class="n">t_employee_type</span><span class="p">();</span>
+<span class="k">begin</span>
+   <span class="o">&lt;&lt;</span><span class="n">process_employees</span><span class="o">&gt;&gt;</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">..</span><span class="n">t_employee</span><span class="p">.</span><span class="k">count</span><span class="p">()</span>
+   <span class="n">loop</span>
+      <span class="n">sys</span><span class="p">.</span><span class="n">dbms_output</span><span class="p">.</span><span class="n">put_line</span><span class="p">(</span><span class="n">t_employee</span><span class="p">(</span><span class="n">i</span><span class="p">));</span> <span class="c1">-- some processing</span>
+   <span class="k">end</span> <span class="n">loop</span> <span class="n">process_employees</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
 <p>Raises neither an error nor checking whether the array is empty. <code>t_employee.count()</code> always returns a <code>number</code> (unless the array is not initialized). If the array is empty <code>count()</code> returns 0 and therefore the loop will not be entered.</p>
-<pre><code class="sql">declare
-   type t_employee_type is table of employee.employee_id%type;
-   t_employee t_employee_type := t_employee_type();
-begin
-   if t_employee is not null then
-      &lt;&lt;process_employees&gt;&gt;
-      for i in 1..t_employee.count()
-      loop
-         sys.dbms_output.put_line(t_employee(i)); -- some processing
-      end loop process_employees;
-   end if;
-end;
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="k">type</span> <span class="n">t_employee_type</span> <span class="k">is</span> <span class="k">table</span> <span class="k">of</span> <span class="n">employee</span><span class="p">.</span><span class="n">employee_id</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+   <span class="n">t_employee</span> <span class="n">t_employee_type</span> <span class="p">:</span><span class="o">=</span> <span class="n">t_employee_type</span><span class="p">();</span>
+<span class="k">begin</span>
+   <span class="k">if</span> <span class="n">t_employee</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span> <span class="k">then</span>
+      <span class="o">&lt;&lt;</span><span class="n">process_employees</span><span class="o">&gt;&gt;</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">..</span><span class="n">t_employee</span><span class="p">.</span><span class="k">count</span><span class="p">()</span>
+      <span class="n">loop</span>
+         <span class="n">sys</span><span class="p">.</span><span class="n">dbms_output</span><span class="p">.</span><span class="n">put_line</span><span class="p">(</span><span class="n">t_employee</span><span class="p">(</span><span class="n">i</span><span class="p">));</span> <span class="c1">-- some processing</span>
+      <span class="k">end</span> <span class="n">loop</span> <span class="n">process_employees</span><span class="p">;</span>
+   <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

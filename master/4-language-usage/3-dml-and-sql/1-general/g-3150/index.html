@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/insum-logo.png" height="31">
+              <img src="../../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-3150: Try to use identity columns for surrogate keys.
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -491,8 +491,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2225,18 +2225,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2318,34 +2306,58 @@
 <h2 id="reason">Reason</h2>
 <p>An identity column is a surrogate key by design – there is no reason why we should not take advantage of this natural implementation when the keys are generated on database level. Using identity column (and therefore assigning sequences as default values on columns) has a huge performance advantage over a trigger solution.</p>
 <h2 id="example-bad">Example (bad)</h2>
-<pre><code class="sql">create table location (
-   location_id        number(10)        not null 
-  ,location_name      varchar2(60 char) not null
-  ,city               varchar2(30 char) not null
-  ,constraint location_pk primary key (location_id)
-  )
-/
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="k">location</span> <span class="p">(</span>
+   <span class="n">location_id</span>        <span class="nb">number</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>        <span class="k">not</span> <span class="k">null</span> 
+  <span class="p">,</span><span class="n">location_name</span>      <span class="n">varchar2</span><span class="p">(</span><span class="mi">60</span> <span class="nb">char</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="p">,</span><span class="n">city</span>               <span class="n">varchar2</span><span class="p">(</span><span class="mi">30</span> <span class="nb">char</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="p">,</span><span class="k">constraint</span> <span class="n">location_pk</span> <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">location_id</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="o">/</span>
 
-create sequence location_seq start with 1 cache 20
-/
+<span class="k">create</span> <span class="n">sequence</span> <span class="n">location_seq</span> <span class="k">start</span> <span class="k">with</span> <span class="mi">1</span> <span class="k">cache</span> <span class="mi">20</span>
+<span class="o">/</span>
 
-create or replace trigger location_bri 
-   before insert on location 
-   for each row 
-begin
-   :new.location_id := location_seq.nextval;
-end;
-/
-</code></pre>
+<span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="k">trigger</span> <span class="n">location_bri</span> 
+   <span class="k">before</span> <span class="k">insert</span> <span class="k">on</span> <span class="k">location</span> 
+   <span class="k">for</span> <span class="k">each</span> <span class="k">row</span> 
+<span class="k">begin</span>
+   <span class="p">:</span><span class="k">new</span><span class="p">.</span><span class="n">location_id</span> <span class="p">:</span><span class="o">=</span> <span class="n">location_seq</span><span class="p">.</span><span class="n">nextval</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
-<pre><code class="sql">create table location (
-   location_id        number(10)  generated by default on null as identity 
-  ,location_name      varchar2(60 char) not null
-  ,city               varchar2(30 char) not null
-  ,constraint location_pk primary key (location_id))
-/
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="k">location</span> <span class="p">(</span>
+   <span class="n">location_id</span>        <span class="nb">number</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="k">generated</span> <span class="k">by</span> <span class="k">default</span> <span class="k">on</span> <span class="k">null</span> <span class="k">as</span> <span class="k">identity</span> 
+  <span class="p">,</span><span class="n">location_name</span>      <span class="n">varchar2</span><span class="p">(</span><span class="mi">60</span> <span class="nb">char</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="p">,</span><span class="n">city</span>               <span class="n">varchar2</span><span class="p">(</span><span class="mi">30</span> <span class="nb">char</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="p">,</span><span class="k">constraint</span> <span class="n">location_pk</span> <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">location_id</span><span class="p">))</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#7cb342">
       
     
     
@@ -75,7 +75,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
   
     <svg class="md-svg">
       <defs>
@@ -100,7 +100,7 @@
         <div class="md-flex__cell md-flex__cell--shrink">
           <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-header-nav__button md-logo">
             
-              <img src="../../../../images/insum-logo.png" height="31">
+              <img src="../../../../images/insum-logo-inverted.png">
             
           </a>
         </div>
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 4.0-SNAPSHOT
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-4120: Avoid using %NOTFOUND directly after the FETCH when working with BULK OPERATIONS and LIMIT clause.
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/" title="PL/SQL & SQL Coding Guidelines" class="md-nav__button md-logo">
       
-        <img src="../../../../images/insum-logo.png" width="48" height="48">
+        <img src="../../../../images/insum-logo-inverted.png" width="48" height="48">
       
     </a>
     PL/SQL & SQL Coding Guidelines
@@ -228,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="About" class="md-nav__link">
-      About
+    <a href="../../../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-nav__link">
+      Introduction to the Insum PL/SQL and SQL Coding Guidelines
     </a>
   </li>
 
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../1-introduction/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../../../1-introduction/introduction/" title="Document Conventions" class="md-nav__link">
+      Document Conventions
     </a>
   </li>
 
@@ -491,8 +491,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../../2-variables-and-types/1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2225,18 +2225,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../5-complexity-analysis/complexity-analysis/" title="Complexity Analysis" class="md-nav__link">
-      Complexity Analysis
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../../6-code-reviews/code-reviews/" title="Code Reviews" class="md-nav__link">
       Code Reviews
     </a>
@@ -2317,94 +2305,173 @@
 <p><code>%notfound</code> is set to <code>true</code> as soon as less than the number of rows defined by the <code>limit</code> clause has been read.</p>
 <h2 id="example-bad">Example (bad)</h2>
 <p>The employee table holds 107 rows. The example below will only show 100 rows as the cursor attribute <code>notfound</code> is set to true as soon as the number of rows to be fetched defined by the limit clause is not fulfilled anymore.</p>
-<pre><code class="sql">declare
-   cursor c_employee is 
-      select *
-        from employee
-       order by employee_id;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="k">cursor</span> <span class="n">c_employee</span> <span class="k">is</span> 
+      <span class="k">select</span> <span class="o">*</span>
+        <span class="k">from</span> <span class="n">employee</span>
+       <span class="k">order</span> <span class="k">by</span> <span class="n">employee_id</span><span class="p">;</span>
 
-   type t_employee_type is table of c_employee%rowtype;
-   t_employee t_employee_type;
-   k_bulk_size constant simple_integer := 10;
-begin
-   open c_employee;
+   <span class="k">type</span> <span class="n">t_employee_type</span> <span class="k">is</span> <span class="k">table</span> <span class="k">of</span> <span class="n">c_employee</span><span class="o">%</span><span class="n">rowtype</span><span class="p">;</span>
+   <span class="n">t_employee</span> <span class="n">t_employee_type</span><span class="p">;</span>
+   <span class="n">k_bulk_size</span> <span class="n">constant</span> <span class="n">simple_integer</span> <span class="p">:</span><span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">begin</span>
+   <span class="k">open</span> <span class="n">c_employee</span><span class="p">;</span>
 
-   &lt;&lt;process_employees&gt;&gt;
-   loop
-      fetch c_employee bulk collect into t_employee limit k_bulk_size;
-      exit process_employees when c_employee%notfound;
+   <span class="o">&lt;&lt;</span><span class="n">process_employees</span><span class="o">&gt;&gt;</span>
+   <span class="n">loop</span>
+      <span class="k">fetch</span> <span class="n">c_employee</span> <span class="n">bulk</span> <span class="n">collect</span> <span class="k">into</span> <span class="n">t_employee</span> <span class="k">limit</span> <span class="n">k_bulk_size</span><span class="p">;</span>
+      <span class="n">exit</span> <span class="n">process_employees</span> <span class="k">when</span> <span class="n">c_employee</span><span class="o">%</span><span class="n">notfound</span><span class="p">;</span>
 
-      &lt;&lt;display_employees&gt;&gt;
-      for i in 1..t_employee.count()
-      loop
-         sys.dbms_output.put_line(t_employee(i).last_name);
-      end loop display_employees;
-   end loop process_employees;
+      <span class="o">&lt;&lt;</span><span class="n">display_employees</span><span class="o">&gt;&gt;</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">..</span><span class="n">t_employee</span><span class="p">.</span><span class="k">count</span><span class="p">()</span>
+      <span class="n">loop</span>
+         <span class="n">sys</span><span class="p">.</span><span class="n">dbms_output</span><span class="p">.</span><span class="n">put_line</span><span class="p">(</span><span class="n">t_employee</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">last_name</span><span class="p">);</span>
+      <span class="k">end</span> <span class="n">loop</span> <span class="n">display_employees</span><span class="p">;</span>
+   <span class="k">end</span> <span class="n">loop</span> <span class="n">process_employees</span><span class="p">;</span>
 
-   close c_employee;
-end;
-/
-</code></pre>
+   <span class="k">close</span> <span class="n">c_employee</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-better">Example (better)</h2>
 <p>This example will show all 107 rows but execute one fetch too much (12 instead of 11).</p>
-<pre><code class="sql">declare
-   cursor c_employee is 
-      select *
-        from employee
-       order by employee_id;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="k">cursor</span> <span class="n">c_employee</span> <span class="k">is</span> 
+      <span class="k">select</span> <span class="o">*</span>
+        <span class="k">from</span> <span class="n">employee</span>
+       <span class="k">order</span> <span class="k">by</span> <span class="n">employee_id</span><span class="p">;</span>
 
-   type t_employee_type is table of c_employee%rowtype;
-   t_employee t_employee_type;
-   k_bulk_size constant simple_integer := 10;
-begin
-   open c_employee;
+   <span class="k">type</span> <span class="n">t_employee_type</span> <span class="k">is</span> <span class="k">table</span> <span class="k">of</span> <span class="n">c_employee</span><span class="o">%</span><span class="n">rowtype</span><span class="p">;</span>
+   <span class="n">t_employee</span> <span class="n">t_employee_type</span><span class="p">;</span>
+   <span class="n">k_bulk_size</span> <span class="n">constant</span> <span class="n">simple_integer</span> <span class="p">:</span><span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">begin</span>
+   <span class="k">open</span> <span class="n">c_employee</span><span class="p">;</span>
 
-   &lt;&lt;process_employees&gt;&gt;
-   loop
-      fetch c_employee bulk collect into t_employee limit k_bulk_size;
-      exit process_employees when t_employee.count() = 0;
-      &lt;&lt;display_employees&gt;&gt;
-      for i in 1..t_employee.count()
-      loop
-         sys.dbms_output.put_line(t_employee(i).last_name);
-      end loop display_employees;
-   end loop process_employees;
+   <span class="o">&lt;&lt;</span><span class="n">process_employees</span><span class="o">&gt;&gt;</span>
+   <span class="n">loop</span>
+      <span class="k">fetch</span> <span class="n">c_employee</span> <span class="n">bulk</span> <span class="n">collect</span> <span class="k">into</span> <span class="n">t_employee</span> <span class="k">limit</span> <span class="n">k_bulk_size</span><span class="p">;</span>
+      <span class="n">exit</span> <span class="n">process_employees</span> <span class="k">when</span> <span class="n">t_employee</span><span class="p">.</span><span class="k">count</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="o">&lt;&lt;</span><span class="n">display_employees</span><span class="o">&gt;&gt;</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">..</span><span class="n">t_employee</span><span class="p">.</span><span class="k">count</span><span class="p">()</span>
+      <span class="n">loop</span>
+         <span class="n">sys</span><span class="p">.</span><span class="n">dbms_output</span><span class="p">.</span><span class="n">put_line</span><span class="p">(</span><span class="n">t_employee</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">last_name</span><span class="p">);</span>
+      <span class="k">end</span> <span class="n">loop</span> <span class="n">display_employees</span><span class="p">;</span>
+   <span class="k">end</span> <span class="n">loop</span> <span class="n">process_employees</span><span class="p">;</span>
 
-   close c_employee;
-end;
-/
-</code></pre>
+   <span class="k">close</span> <span class="n">c_employee</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
 
 <h2 id="example-good">Example (good)</h2>
 <p>This example does the trick (11 fetches only to process all rows)</p>
-<pre><code class="sql">declare
-   cursor c_employee is 
-      select *
-        from employee
-       order by employee_id;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
+   <span class="k">cursor</span> <span class="n">c_employee</span> <span class="k">is</span> 
+      <span class="k">select</span> <span class="o">*</span>
+        <span class="k">from</span> <span class="n">employee</span>
+       <span class="k">order</span> <span class="k">by</span> <span class="n">employee_id</span><span class="p">;</span>
 
-   type t_employee_type is table of c_employee%rowtype;
-   t_employee t_employee_type;
-   k_bulk_size constant simple_integer := 10;
-begin
-   open c_employee;
+   <span class="k">type</span> <span class="n">t_employee_type</span> <span class="k">is</span> <span class="k">table</span> <span class="k">of</span> <span class="n">c_employee</span><span class="o">%</span><span class="n">rowtype</span><span class="p">;</span>
+   <span class="n">t_employee</span> <span class="n">t_employee_type</span><span class="p">;</span>
+   <span class="n">k_bulk_size</span> <span class="n">constant</span> <span class="n">simple_integer</span> <span class="p">:</span><span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">begin</span>
+   <span class="k">open</span> <span class="n">c_employee</span><span class="p">;</span>
 
-   &lt;&lt;process_employees&gt;&gt;
-   loop
-      fetch c_employee bulk collect into t_employee limit k_bulk_size;
-      &lt;&lt;display_employees&gt;&gt;
-      for i in 1..t_employee.count()
-      loop
-         sys.dbms_output.put_line(t_employee(i).last_name);
-      end loop display_employees;
-      exit process_employees when t_employee.count() &lt;&gt; k_bulk_size;
-   end loop process_employees;
+   <span class="o">&lt;&lt;</span><span class="n">process_employees</span><span class="o">&gt;&gt;</span>
+   <span class="n">loop</span>
+      <span class="k">fetch</span> <span class="n">c_employee</span> <span class="n">bulk</span> <span class="n">collect</span> <span class="k">into</span> <span class="n">t_employee</span> <span class="k">limit</span> <span class="n">k_bulk_size</span><span class="p">;</span>
+      <span class="o">&lt;&lt;</span><span class="n">display_employees</span><span class="o">&gt;&gt;</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">..</span><span class="n">t_employee</span><span class="p">.</span><span class="k">count</span><span class="p">()</span>
+      <span class="n">loop</span>
+         <span class="n">sys</span><span class="p">.</span><span class="n">dbms_output</span><span class="p">.</span><span class="n">put_line</span><span class="p">(</span><span class="n">t_employee</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">last_name</span><span class="p">);</span>
+      <span class="k">end</span> <span class="n">loop</span> <span class="n">display_employees</span><span class="p">;</span>
+      <span class="n">exit</span> <span class="n">process_employees</span> <span class="k">when</span> <span class="n">t_employee</span><span class="p">.</span><span class="k">count</span><span class="p">()</span> <span class="o">&lt;&gt;</span> <span class="n">k_bulk_size</span><span class="p">;</span>
+   <span class="k">end</span> <span class="n">loop</span> <span class="n">process_employees</span><span class="p">;</span>
 
-   close c_employee;
-end;
-/
-</code></pre>
+   <span class="k">close</span> <span class="n">c_employee</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="o">/</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
