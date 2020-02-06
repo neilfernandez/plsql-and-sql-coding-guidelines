@@ -19,7 +19,7 @@
       
         <meta name="lang:clipboard.copied" content="Copied to clipboard">
       
-        <meta name="lang:search.language" content="en">
+        <meta name="lang:search.language" content="en, fr, es">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -112,7 +112,7 @@
             
               
                 <span class="md-header-nav__topic">
-                  PL/SQL & SQL Coding Guidelines Version 1.0
+                  PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
                   G-2340: Always define your VARCHAR2 variables using CHAR SEMANTIC (if not defined anchored).
@@ -493,8 +493,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1-general/g-2150/" title="G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL." class="md-nav__link">
-      G-2150: Avoid comparisons with NULL value, consider using IS [NOT] NULL.
+    <a href="../../1-general/g-2150/" title="G-2150: Never use comparisons with NULL values, use IS [NOT] NULL." class="md-nav__link">
+      G-2150: Never use comparisons with NULL values, use IS [NOT] NULL.
     </a>
   </li>
 
@@ -2224,6 +2224,42 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      9 appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        9 appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../9-appendix/appendix/" title="PDF Version" class="md-nav__link">
+      PDF Version
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -2288,8 +2324,9 @@
 <p>Reliability</p>
 </div>
 <h2 id="reason">Reason</h2>
-<p>Changes to the <code>NLS_LENGTH_SEMANTIC</code> will only be picked up by your code after a recompilation.</p>
-<p>In a multibyte environment a <code>VARCHAR2(10)</code> definition may not necessarily hold 10 characters, when multibyte characters a part of the value that should be stored unless the definition was done using the char semantic.</p>
+<p>Changes to <code>NLS_LENGTH_SEMANTICS</code> will only be picked up by your code after a recompilation.</p>
+<p>In a multibyte environment a <code>VARCHAR2(50)</code> definition may not necessarily hold 50 characters, when multibyte characters a part of the value that should be stored unless the definition was done using the char semantic.</p>
+<p>Additionally, <a href="https://carsandcode.com/2019/01/14/names-can-be-up-to-50-bytes-in-length/" target="_blank"> business users never say last names should be 50 bytes in length</a>.</p>
 <h2 id="example-bad">Example (bad)</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -2390,6 +2427,32 @@
     </div>
     
       <script src="../../../../assets/javascripts/application.c648116f.js"></script>
+      
+        
+        
+          
+          <script src="../../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+              
+                <script src="../../../../assets/javascripts/lunr/lunr.fr.js"></script>
+              
+            
+          
+            
+              
+              
+                <script src="../../../../assets/javascripts/lunr/lunr.es.js"></script>
+              
+            
+          
+          
+            <script src="../../../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       
