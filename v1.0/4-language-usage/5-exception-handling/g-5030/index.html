@@ -911,8 +911,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
-      G-3200: Never use an ON clause when USING will work.
+    <a href="../../3-dml-and-sql/1-general/g-3200/" title="G-3200: Avoid using an ON clause when a USING clause will work." class="md-nav__link">
+      G-3200: Avoid using an ON clause when a USING clause will work.
     </a>
   </li>
 
@@ -2247,8 +2247,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../9-appendix/appendix/" title="PDF Version" class="md-nav__link">
-      PDF Version
+    <a href="../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
+      Appendix
     </a>
   </li>
 
@@ -2351,9 +2351,9 @@
 24
 25
 26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
-   <span class="n">l_dummy</span> <span class="n">dual</span><span class="p">.</span><span class="n">dummy</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+   <span class="n">l_dummy</span>         <span class="n">dual</span><span class="p">.</span><span class="n">dummy</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
    <span class="n">no_data_found</span>   <span class="k">exception</span><span class="p">;</span>
-   <span class="n">k_rownum</span>        <span class="n">constant</span> <span class="n">simple_integer</span>           <span class="p">:</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">k_rownum</span>        <span class="n">constant</span> <span class="n">simple_integer</span>        <span class="p">:</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
    <span class="n">k_no_data_found</span> <span class="n">constant</span> <span class="n">types</span><span class="p">.</span><span class="n">short_text_type</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;no_data_found&#39;</span><span class="p">;</span>
 <span class="k">begin</span>
    <span class="k">select</span> <span class="n">dummy</span>
@@ -2402,9 +2402,9 @@
 20
 21
 22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">declare</span>
-   <span class="n">l_dummy</span> <span class="n">dual</span><span class="p">.</span><span class="n">dummy</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
+   <span class="n">l_dummy</span>         <span class="n">dual</span><span class="p">.</span><span class="n">dummy</span><span class="o">%</span><span class="k">type</span><span class="p">;</span>
    <span class="n">empty_value</span>     <span class="k">exception</span><span class="p">;</span>
-   <span class="n">k_rownum</span>        <span class="n">constant</span> <span class="n">simple_integer</span>           <span class="p">:</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">k_rownum</span>        <span class="n">constant</span> <span class="n">simple_integer</span>        <span class="p">:</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
    <span class="n">k_empty_value</span>   <span class="n">constant</span> <span class="n">types</span><span class="p">.</span><span class="n">short_text_type</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;empty_value&#39;</span><span class="p">;</span>
    <span class="n">k_no_data_found</span> <span class="n">constant</span> <span class="n">types</span><span class="p">.</span><span class="n">short_text_type</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;no_data_found&#39;</span><span class="p">;</span>
 <span class="k">begin</span>

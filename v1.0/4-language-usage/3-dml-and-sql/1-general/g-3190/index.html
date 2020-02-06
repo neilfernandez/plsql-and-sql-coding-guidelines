@@ -967,8 +967,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
-      G-3200: Never use an ON clause when USING will work.
+    <a href="../g-3200/" title="G-3200: Avoid using an ON clause when a USING clause will work." class="md-nav__link">
+      G-3200: Avoid using an ON clause when a USING clause will work.
     </a>
   </li>
 
@@ -2249,8 +2249,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../9-appendix/appendix/" title="PDF Version" class="md-nav__link">
-      PDF Version
+    <a href="../../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
+      Appendix
     </a>
   </li>
 
@@ -2387,13 +2387,13 @@
 10
 11
 12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">d</span><span class="p">.</span><span class="n">department_name</span> 
-      <span class="p">,</span><span class="n">e</span><span class="p">.</span><span class="n">last_name</span> 
-      <span class="p">,</span><span class="n">e</span><span class="p">.</span><span class="n">first_name</span> 
-  <span class="k">from</span> <span class="n">employee</span>   <span class="n">e</span>
-  <span class="k">join</span> <span class="n">department</span> <span class="n">d</span> <span class="k">using</span> <span class="p">(</span><span class="n">department_id</span><span class="p">)</span>
- <span class="k">order</span> <span class="k">by</span> <span class="n">d</span><span class="p">.</span><span class="n">department_name</span> 
-         <span class="p">,</span><span class="n">e</span><span class="p">.</span><span class="n">last_name</span><span class="p">;</span>
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">dept</span><span class="p">.</span><span class="n">department_name</span> 
+      <span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">last_name</span> 
+      <span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">first_name</span> 
+  <span class="k">from</span> <span class="n">employee</span>   <span class="n">emp</span>
+  <span class="k">join</span> <span class="n">department</span> <span class="n">dept</span> <span class="k">using</span> <span class="p">(</span><span class="n">department_id</span><span class="p">)</span>
+ <span class="k">order</span> <span class="k">by</span> <span class="n">dept</span><span class="p">.</span><span class="n">department_name</span> 
+         <span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">last_name</span><span class="p">;</span>
 
 <span class="n">DEPARTMENT_NAME</span>                <span class="n">LAST_NAME</span>                 <span class="n">FIRST_NAME</span>         
 <span class="c1">------------------------------ ------------------------- --------------------</span>
@@ -2437,13 +2437,13 @@
           </a>
         
         
-          <a href="../g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../g-3200/" title="G-3200: Avoid using an ON clause when a USING clause will work." class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                G-3200: Never use an ON clause when USING will work.
+                G-3200: Avoid using an ON clause when a USING clause will work.
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

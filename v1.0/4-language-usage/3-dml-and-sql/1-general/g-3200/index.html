@@ -38,7 +38,7 @@
     
     
       
-        <title>G-3200: Never use an ON clause when USING will work. - PL/SQL & SQL Coding Guidelines</title>
+        <title>G-3200: Avoid using an ON clause when a USING clause will work. - PL/SQL & SQL Coding Guidelines</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#g-3200-never-use-an-on-clause-when-using-will-work" tabindex="1" class="md-skip">
+      <a href="#g-3200-avoid-using-an-on-clause-when-a-using-clause-will-work" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
                   PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
-                  G-3200: Never use an ON clause when USING will work.
+                  G-3200: Avoid using an ON clause when a USING clause will work.
                 </span>
               
             
@@ -924,11 +924,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        G-3200: Never use an ON clause when USING will work.
+        G-3200: Avoid using an ON clause when a USING clause will work.
       </label>
     
-    <a href="./" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link md-nav__link--active">
-      G-3200: Never use an ON clause when USING will work.
+    <a href="./" title="G-3200: Avoid using an ON clause when a USING clause will work." class="md-nav__link md-nav__link--active">
+      G-3200: Avoid using an ON clause when a USING clause will work.
     </a>
     
       
@@ -2249,8 +2249,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../9-appendix/appendix/" title="PDF Version" class="md-nav__link">
-      PDF Version
+    <a href="../../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
+      Appendix
     </a>
   </li>
 
@@ -2318,7 +2318,7 @@
               
                 
                 
-                <h1 id="g-3200-never-use-an-on-clause-when-using-will-work">G-3200: Never use an ON clause when USING will work.</h1>
+                <h1 id="g-3200-avoid-using-an-on-clause-when-a-using-clause-will-work">G-3200: Avoid using an ON clause when a USING clause will work.</h1>
 <div class="admonition warning">
 <p class="admonition-title">Minor</p>
 <p>Maintainability</p>
@@ -2344,11 +2344,11 @@
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">select</span>   <span class="n">department_id</span>
-       <span class="n">d</span><span class="p">.</span><span class="n">department_name</span> 
-      <span class="p">,</span><span class="n">e</span><span class="p">.</span><span class="n">last_name</span> 
-      <span class="p">,</span><span class="n">e</span><span class="p">.</span><span class="n">first_name</span> 
-  <span class="k">from</span> <span class="n">employee</span> <span class="n">e</span> <span class="k">join</span> <span class="n">department</span> <span class="n">d</span> <span class="k">using</span> <span class="p">(</span><span class="n">department_id</span><span class="p">);</span>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">department_id</span>
+       <span class="n">dept</span><span class="p">.</span><span class="n">department_name</span> 
+      <span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">last_name</span> 
+      <span class="p">,</span><span class="n">emp</span><span class="p">.</span><span class="n">first_name</span> 
+  <span class="k">from</span> <span class="n">employee</span> <span class="n">emp</span> <span class="k">join</span> <span class="n">department</span> <span class="n">dept</span> <span class="k">using</span> <span class="p">(</span><span class="n">department_id</span><span class="p">);</span>
 </pre></div>
 </td></tr></table>
                 

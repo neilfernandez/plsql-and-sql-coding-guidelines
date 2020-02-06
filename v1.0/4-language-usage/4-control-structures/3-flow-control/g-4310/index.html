@@ -911,8 +911,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../3-dml-and-sql/1-general/g-3200/" title="G-3200: Never use an ON clause when USING will work." class="md-nav__link">
-      G-3200: Never use an ON clause when USING will work.
+    <a href="../../../3-dml-and-sql/1-general/g-3200/" title="G-3200: Avoid using an ON clause when a USING clause will work." class="md-nav__link">
+      G-3200: Avoid using an ON clause when a USING clause will work.
     </a>
   </li>
 
@@ -2256,8 +2256,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../9-appendix/appendix/" title="PDF Version" class="md-nav__link">
-      PDF Version
+    <a href="../../../../9-appendix/appendix/" title="Appendix" class="md-nav__link">
+      Appendix
     </a>
   </li>
 
@@ -2383,17 +2383,17 @@ you can break the code into smaller routines; use nested ifs; test and retest a 
       <span class="n">k_errno</span>       <span class="n">constant</span> <span class="n">simple_integer</span> <span class="p">:</span><span class="o">=</span> <span class="o">-</span><span class="mi">20501</span><span class="p">;</span>
       <span class="n">k_errmsg</span>      <span class="n">constant</span> <span class="n">string</span><span class="p">(</span><span class="mi">100</span> <span class="nb">char</span><span class="p">)</span>  <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;Password must contain a digit.&#39;</span><span class="p">;</span>
       <span class="n">l_isdigit</span>     <span class="nb">boolean</span>     <span class="p">:</span><span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-      <span class="n">l_len_pw</span>      <span class="n">pls_integer</span><span class="p">;</span>
-      <span class="n">l_len_array</span>   <span class="n">pls_integer</span><span class="p">;</span>
+      <span class="n">l_password_length</span>  <span class="n">pls_integer</span><span class="p">;</span>
+      <span class="n">l_array_length</span>   <span class="n">pls_integer</span><span class="p">;</span>
    <span class="k">begin</span>
-      <span class="n">l_len_pw</span>    <span class="p">:</span><span class="o">=</span> <span class="k">length</span><span class="p">(</span><span class="n">in_password</span><span class="p">);</span>
-      <span class="n">l_len_array</span> <span class="p">:</span><span class="o">=</span> <span class="k">length</span><span class="p">(</span><span class="n">k_digitarray</span><span class="p">);</span>
+      <span class="n">l_password_length</span> <span class="p">:</span><span class="o">=</span> <span class="k">length</span><span class="p">(</span><span class="n">in_password</span><span class="p">);</span>
+      <span class="n">l_array_length</span>    <span class="p">:</span><span class="o">=</span> <span class="k">length</span><span class="p">(</span><span class="n">k_digitarray</span><span class="p">);</span>
 
       <span class="o">&lt;&lt;</span><span class="n">check_digit</span><span class="o">&gt;&gt;</span>
-      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">k_lower_bound</span> <span class="p">..</span> <span class="n">l_len_array</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">k_lower_bound</span> <span class="p">..</span> <span class="n">l_array_length</span>
       <span class="n">loop</span>
          <span class="o">&lt;&lt;</span><span class="n">check_pw_char</span><span class="o">&gt;&gt;</span>
-         <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">k_lower_bound</span> <span class="p">..</span> <span class="n">l_len_pw</span>
+         <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">k_lower_bound</span> <span class="p">..</span> <span class="n">l_password_length</span>
          <span class="n">loop</span>
             <span class="k">if</span> <span class="n">substr</span><span class="p">(</span><span class="n">in_password</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">substr</span><span class="p">(</span><span class="n">k_digitarray</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">then</span>
                <span class="n">l_isdigit</span> <span class="p">:</span><span class="o">=</span> <span class="k">true</span><span class="p">;</span>
@@ -2455,18 +2455,18 @@ you can break the code into smaller routines; use nested ifs; test and retest a 
       <span class="n">k_lower_bound</span> <span class="n">constant</span> <span class="n">simple_integer</span> <span class="p">:</span><span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
       <span class="n">k_errno</span>       <span class="n">constant</span> <span class="n">simple_integer</span> <span class="p">:</span><span class="o">=</span> <span class="o">-</span><span class="mi">20501</span><span class="p">;</span>
       <span class="n">k_errmsg</span>      <span class="n">constant</span> <span class="n">string</span><span class="p">(</span><span class="mi">100</span> <span class="nb">char</span><span class="p">)</span>  <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;Password must contain a digit.&#39;</span><span class="p">;</span>
-      <span class="n">l_isdigit</span>      <span class="nb">boolean</span>     <span class="p">:</span><span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-      <span class="n">l_len_pw</span>       <span class="n">pls_integer</span><span class="p">;</span>
-      <span class="n">l_len_array</span>    <span class="n">pls_integer</span><span class="p">;</span>
+      <span class="n">l_isdigit</span>         <span class="nb">boolean</span> <span class="p">:</span><span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+      <span class="n">l_password_length</span> <span class="n">pls_integer</span><span class="p">;</span>
+      <span class="n">l_array_length</span>    <span class="n">pls_integer</span><span class="p">;</span>
    <span class="k">begin</span>
-      <span class="n">l_len_pw</span>    <span class="p">:</span><span class="o">=</span> <span class="k">length</span><span class="p">(</span><span class="n">in_password</span><span class="p">);</span>
-      <span class="n">l_len_array</span> <span class="p">:</span><span class="o">=</span> <span class="k">length</span><span class="p">(</span><span class="n">k_digitarray</span><span class="p">);</span>
+      <span class="n">l_password_length</span> <span class="p">:</span><span class="o">=</span> <span class="k">length</span><span class="p">(</span><span class="n">in_password</span><span class="p">);</span>
+      <span class="n">l_array_length</span>    <span class="p">:</span><span class="o">=</span> <span class="k">length</span><span class="p">(</span><span class="n">k_digitarray</span><span class="p">);</span>
 
       <span class="o">&lt;&lt;</span><span class="n">check_digit</span><span class="o">&gt;&gt;</span>
-      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">k_lower_bound</span> <span class="p">..</span> <span class="n">l_len_array</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">k_lower_bound</span> <span class="p">..</span> <span class="n">l_array_length</span>
       <span class="n">loop</span>
          <span class="o">&lt;&lt;</span><span class="n">check_pw_char</span><span class="o">&gt;&gt;</span>
-         <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">k_lower_bound</span> <span class="p">..</span> <span class="n">l_len_pw</span>
+         <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">k_lower_bound</span> <span class="p">..</span> <span class="n">l_password_length</span>
          <span class="n">loop</span>
             <span class="k">if</span> <span class="n">substr</span><span class="p">(</span><span class="n">in_password</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">substr</span><span class="p">(</span><span class="n">k_digitarray</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">then</span>
                <span class="n">l_isdigit</span> <span class="p">:</span><span class="o">=</span> <span class="k">true</span><span class="p">;</span>
@@ -2502,7 +2502,7 @@ you can break the code into smaller routines; use nested ifs; test and retest a 
 12
 13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="n">package</span> <span class="n">body</span> <span class="n">my_package</span> <span class="k">is</span>
    <span class="k">procedure</span> <span class="n">password_check</span> <span class="p">(</span><span class="n">in_password</span> <span class="k">in</span> <span class="n">varchar2</span><span class="p">)</span> <span class="k">is</span>
-      <span class="n">k_digitpattern</span> <span class="n">constant</span> <span class="n">string</span><span class="p">(</span><span class="mi">10</span> <span class="nb">char</span><span class="p">)</span>   <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;\d&#39;</span><span class="p">;</span>
+      <span class="n">k_digitpattern</span> <span class="n">constant</span> <span class="n">string</span><span class="p">(</span><span class="mi">2</span> <span class="nb">char</span><span class="p">)</span>   <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;\d&#39;</span><span class="p">;</span>
       <span class="n">k_errno</span>        <span class="n">constant</span> <span class="n">simple_integer</span> <span class="p">:</span><span class="o">=</span> <span class="o">-</span><span class="mi">20501</span><span class="p">;</span>
       <span class="n">k_errmsg</span>       <span class="n">constant</span> <span class="n">string</span><span class="p">(</span><span class="mi">100</span> <span class="nb">char</span><span class="p">)</span>  <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;Password must contain a digit.&#39;</span><span class="p">;</span>
    <span class="k">begin</span>
