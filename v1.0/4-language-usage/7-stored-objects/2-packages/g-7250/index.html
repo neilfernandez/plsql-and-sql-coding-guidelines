@@ -1643,9 +1643,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        G-7250: Always use NOCOPY when appropriate
+      </label>
+    
     <a href="./" title="G-7250: Always use NOCOPY when appropriate" class="md-nav__link md-nav__link--active">
       G-7250: Always use NOCOPY when appropriate
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reason" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-bad" class="md-nav__link">
+    Example (bad)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-good" class="md-nav__link">
+    Example (good)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2198,6 +2241,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reason" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-bad" class="md-nav__link">
+    Example (bad)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-good" class="md-nav__link">
+    Example (good)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2210,6 +2283,75 @@
                 
                 
                 <h1 id="g-7250-always-use-nocopy-when-appropriate">G-7250: Always use NOCOPY when appropriate</h1>
+<div class="admonition tip">
+<p class="admonition-title">Minor</p>
+<p>Efficiency</p>
+</div>
+<h2 id="reason">Reason</h2>
+<p>When we pass OUT or IN OUT parameters in PL/SQL the Oracle Database supports two methods of passing data: By Value and By Reference.  </p>
+<p>The default, By Value, will copy all the data passed into a temporary buffer. This buffer is passed to the procedure and used during the life of the procedure. Then when processing is complete, the data in the buffer is copied to the original variable.</p>
+<p>Passing By Reference is achieved by the NOCOPY hint, and, in contrast, it will pass a reference to the variable's data. Think of a pointer in the C language. This means that no temporary buffer is required. When passing significant amounts of data, the effects of passing values by reference can be significant.</p>
+<h2 id="example-bad">Example (bad)</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">procedure</span> <span class="n">add_message</span><span class="p">(</span>
+     <span class="n">p_msg</span>          <span class="k">in</span> <span class="k">out</span> <span class="n">message_tbl_type</span>
+   <span class="p">,</span> <span class="n">p_message_text</span> <span class="k">in</span> <span class="n">varchar2</span>
+   <span class="p">,</span> <span class="n">p_severity</span>     <span class="k">in</span> <span class="n">varchar2</span> <span class="k">default</span> <span class="s1">&#39;E&#39;</span>
+<span class="p">)</span>
+<span class="k">is</span>
+  <span class="n">l_index</span>  <span class="n">pls_integer</span><span class="p">;</span>
+<span class="k">begin</span>
+
+  <span class="n">l_index</span> <span class="p">:</span><span class="o">=</span> <span class="n">p_msg</span><span class="p">.</span><span class="k">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">p_msg</span><span class="p">(</span><span class="n">l_index</span><span class="p">).</span><span class="k">message_text</span> <span class="p">:</span><span class="o">=</span> <span class="n">p_message_text</span><span class="p">;</span>
+  <span class="n">p_msg</span><span class="p">(</span><span class="n">l_index</span><span class="p">).</span><span class="n">severity</span> <span class="p">:</span><span class="o">=</span> <span class="n">p_severity</span><span class="p">;</span>
+
+<span class="k">end</span> <span class="n">add_message</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="example-good">Example (good)</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">procedure</span> <span class="n">add_message</span><span class="p">(</span>
+<span class="hll">     <span class="n">p_msg</span>          <span class="k">in</span> <span class="k">out</span> <span class="n">nocopy</span> <span class="n">message_tbl_type</span>
+</span>   <span class="p">,</span> <span class="n">p_message_text</span> <span class="k">in</span> <span class="n">varchar2</span>
+   <span class="p">,</span> <span class="n">p_severity</span>     <span class="k">in</span> <span class="n">varchar2</span> <span class="k">default</span> <span class="s1">&#39;E&#39;</span>
+<span class="p">)</span>
+<span class="k">is</span>
+  <span class="n">l_index</span>  <span class="n">pls_integer</span><span class="p">;</span>
+<span class="k">begin</span>
+
+  <span class="n">l_index</span> <span class="p">:</span><span class="o">=</span> <span class="n">p_msg</span><span class="p">.</span><span class="k">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">p_msg</span><span class="p">(</span><span class="n">l_index</span><span class="p">).</span><span class="k">message_text</span> <span class="p">:</span><span class="o">=</span> <span class="n">p_message_text</span><span class="p">;</span>
+  <span class="n">p_msg</span><span class="p">(</span><span class="n">l_index</span><span class="p">).</span><span class="n">severity</span> <span class="p">:</span><span class="o">=</span> <span class="n">p_severity</span><span class="p">;</span>
+
+<span class="k">end</span> <span class="n">add_message</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
