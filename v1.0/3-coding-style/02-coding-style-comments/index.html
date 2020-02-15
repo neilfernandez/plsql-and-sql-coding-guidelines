@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/1-introduction/introduction/">
+        <link rel="canonical" href="https://insum-labs.github.io/plsql-and-sql-coding-guidelines/3-coding-style/02-coding-style-comments/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Document Conventions - PL/SQL & SQL Coding Guidelines</title>
+        <title>Comments Style - PL/SQL & SQL Coding Guidelines</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#document-conventions" tabindex="1" class="md-skip">
+      <a href="#comments-style" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
                   PL/SQL & SQL Coding Guidelines - Version 1.0
                 </span>
                 <span class="md-header-nav__topic">
-                  Document Conventions
+                  Comments Style
                 </span>
               
             
@@ -238,83 +238,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Document Conventions
-      </label>
-    
-    <a href="./" title="Document Conventions" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../1-document-conventions/1-document-conventions/" title="Document Conventions" class="md-nav__link">
       Document Conventions
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scope" class="md-nav__link">
-    Scope
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sqale" class="md-nav__link">
-    SQALE
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sqale-characteristics-and-subcharacteristics" class="md-nav__link">
-    SQALE characteristics and subcharacteristics
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#severity-of-the-rule" class="md-nav__link">
-    Severity of the rule
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-used" class="md-nav__link">
-    Keywords used
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -334,11 +262,122 @@
       
       
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Coding Style
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Coding Style
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href="../../3-coding-style/coding-style/" title="Coding Style" class="md-nav__link">
-      Coding Style
+    <a href="../01-coding-style/" title="General Style" class="md-nav__link">
+      General Style
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Comments Style
+      </label>
+    
+    <a href="./" title="Comments Style" class="md-nav__link md-nav__link--active">
+      Comments Style
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#commenting-goals" class="md-nav__link">
+    Commenting Goals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-javadoc-template" class="md-nav__link">
+    The JavaDoc Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commenting-tags" class="md-nav__link">
+    Commenting Tags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-documentation" class="md-nav__link">
+    Generated Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commenting-conventions" class="md-nav__link">
+    Commenting Conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-instrumentation" class="md-nav__link">
+    Code Instrumentation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -2259,43 +2298,44 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scope" class="md-nav__link">
-    Scope
+  <a href="#commenting-goals" class="md-nav__link">
+    Commenting Goals
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sqale" class="md-nav__link">
-    SQALE
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sqale-characteristics-and-subcharacteristics" class="md-nav__link">
-    SQALE characteristics and subcharacteristics
+  <a href="#the-javadoc-template" class="md-nav__link">
+    The JavaDoc Template
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#severity-of-the-rule" class="md-nav__link">
-    Severity of the rule
+      
+        <li class="md-nav__item">
+  <a href="#commenting-tags" class="md-nav__link">
+    Commenting Tags
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#keywords-used" class="md-nav__link">
-    Keywords used
+      
+        <li class="md-nav__item">
+  <a href="#generated-documentation" class="md-nav__link">
+    Generated Documentation
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#commenting-conventions" class="md-nav__link">
+    Commenting Conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-instrumentation" class="md-nav__link">
+    Code Instrumentation
+  </a>
   
 </li>
       
@@ -2316,115 +2356,130 @@
               
                 
                 
-                <h1 id="document-conventions">Document Conventions</h1>
-<p>This document describes rules and recommendations for developing applications using the PL/SQL &amp; SQL Language.</p>
-<h2 id="scope">Scope</h2>
-<p>This document applies to the PL/SQL and SQL language as used within ORACLE databases and tools, which access ORACLE databases.</p>
-<h2 id="sqale">SQALE</h2>
-<p>SQALE (Software Quality Assessment based on Lifecycle Expectations) is a method to support the evaluation of a software application source code. It is a generic method, independent of the language and source code analysis tools.</p>
-<h3 id="sqale-characteristics-and-subcharacteristics">SQALE characteristics and subcharacteristics</h3>
+                <h1 id="comments-style">Comments Style</h1>
+<h2 id="commenting-goals">Commenting Goals</h2>
+<p>Code comments are there to help future readers of the code (there is a good chance that future reader is you... Any code that you wrote six months to a year ago might as well have been written by someone else) understand how to use the code (especially in PL/SQL package specs) and how to maintain the code (especially in PL/SQL package bodies).</p>
+<h2 id="the-javadoc-template">The JavaDoc Template</h2>
+<p>Use the JavaDoc style comments, as seen in the example below and read more here <a href="https://plsql-md-doc.readthedocs.io/en/latest/javadoc-template/">JavaDoc Template</a> and <a href="https://www.thatjeffsmith.com/archive/2012/03/javadoc-for-the-database-a-la-dbdoc-via-sql-developer/">JavaDoc for the Oracle Database a la DBDOC</a>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Description</span>
+<span class="cm"> *</span>
+<span class="cm"> *</span>
+<span class="cm"> * @example</span>
+<span class="cm"> * </span>
+<span class="cm"> * @issue</span>
+<span class="cm"> *</span>
+<span class="cm"> * @author</span>
+<span class="cm"> * @created</span>
+<span class="cm"> * @param</span>
+<span class="cm"> * @return</span>
+<span class="cm"> */</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="commenting-tags">Commenting Tags</h2>
 <table>
 <thead>
 <tr>
-<th>Characteristic</th>
-<th>Description and Subcharacteristics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Changeability</td>
-<td>The capability of the software product to enable a specified modification to be implemented.<ul><li>Architecture related changeability</li><li>Logic related changeability</li><li>Data related changeability</li><ul></td>
-</tr>
-<tr>
-<td>Efficiency</td>
-<td>The capability of the software product to provide appropriate performance, relative to the amount of resources used, under stated conditions.<ul><li>Memory use</li><li>Processor use</li><li>Network use</li></ul></td>
-</tr>
-<tr>
-<td>Maintainability</td>
-<td>The capability of the software product to be modified. Modifications may include corrections, improvements or adaptation of the software to changes in environment, and in requirements and functional specifications.<ul><li>Understandability</li><li>Readability</li></ul></td>
-</tr>
-<tr>
-<td>Portability</td>
-<td>The capability of the software product to be transferred from one environment to another.<ul><li>Compiler related portability</li><li>Hardware related portability</li><li>Language related portability</li><li>OS related portability</li><li>Software related portability</li><li>Time zone related portability.</li></ul></td>
-</tr>
-<tr>
-<td>Reliability</td>
-<td>The capability of the software product to maintain a specified level of performance when used under specified conditions.<ul><li>Architecture related reliability</li><li>Data related reliability</li><li>Exception handling</li><li>Fault tolerance</li><li>Instruction related reliability</li><li>Logic related reliability</li><li>Resource related reliability</li><li>Synchronization related reliability</li><li>Unit tests coverage.</li></ul></td>
-</tr>
-<tr>
-<td>Reusability</td>
-<td>The capability of the software product to be reused within the development process.<ul><li>Modularity</li><li>Transportability.</li></ul></td>
-</tr>
-<tr>
-<td>Security</td>
-<td>The capability of the software product to protect information and data so that unauthorized persons or systems cannot read or modify them and authorized persons or systems are not denied access to them.<ul><li>API abuse</li><li>Errors (e.g. leaving a system in a vulnerable state)</li><li>Input validatation and representation</li><li>Security features.</li></ul></td>
-</tr>
-<tr>
-<td>Testability</td>
-<td>The capability of the software product to enable modified software to be validated.<ul><li>Integration level testability</li><li>Unit level testability.</li></ul></td>
-</tr>
-</tbody>
-</table>
-<h3 id="severity-of-the-rule">Severity of the rule</h3>
-<div class="admonition bug">
-<p class="admonition-title">Blocker</p>
-<p>Will or may result in a bug.</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Critical</p>
-<p>Will have a high/direct impact on the maintenance cost.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Major</p>
-<p>Will have a medium/potential impact on the maintenance cost.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Minor</p>
-<p>Will have a low impact on the maintenance cost.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Very low impact; it is just a remediation cost report.</p>
-</div>
-<h3 id="keywords-used">Keywords used</h3>
-<table>
-<thead>
-<tr>
-<th>Keyword</th>
+<th>Tag</th>
 <th>Meaning</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Always</td>
-<td>Emphasizes this rule must be enforced.</td>
+<td><code>example</code></td>
+<td>Code snippet that shows how the procedure or function can be called.</td>
+<td></td>
 </tr>
 <tr>
-<td>Never</td>
-<td>Emphasizes this action must not happen.</td>
+<td><code>issue</code></td>
+<td>Ticketing system issue or ticket that explains the code functionality</td>
+<td><code>@issue IE-234</code></td>
 </tr>
 <tr>
-<td>Avoid</td>
-<td>Emphasizes that the action should be prevented, but some exceptions may exist.</td>
+<td><code>param</code></td>
+<td>Description of a parameter.</td>
+<td><code>@param in_string input string</code></td>
 </tr>
 <tr>
-<td>Try</td>
-<td>Emphasizes that the rule should be attempted whenever possible and appropriate.</td>
+<td><code>return</code></td>
+<td>Description of the return value of a function.</td>
+<td><code>@return result of the calculation</code></td>
 </tr>
 <tr>
-<td>Example</td>
-<td>Precedes text used to illustrate a rule or a recommendation.</td>
-</tr>
-<tr>
-<td>Reason</td>
-<td>Explains the thoughts and purpose behind a rule or a recommendation.</td>
-</tr>
-<tr>
-<td>Restriction</td>
-<td>Describes the circumstances to be fulfilled to make use of a rule.</td>
+<td><code>throws</code></td>
+<td>Describe errors that may be raised by the program unit.</td>
+<td><code>@throws no_data_found</code></td>
 </tr>
 </tbody>
 </table>
+<h2 id="generated-documentation">Generated Documentation</h2>
+<p>If you used the JavaDoc syntax then you can use <a href="https://github.com/OraOpenSource/plsql-md-doc">plsql-md-doc</a> to generate an easy to read document.</p>
+<p>Alternatively, <a href="https://www.oracle.com/database/technologies/appdev/sql-developer.html">Oracle SQL Developer</a> or PL/SQL Developer include documentation functionality based on a javadoc-like tagging. </p>
+<h2 id="commenting-conventions">Commenting Conventions</h2>
+<p>Inside a program unit only use the line commenting technique <code>--</code> unless you temporarly deactivate code sections for testing.</p>
+<p>To comment the source code for later document generation, comments like <code>/** ... */</code> are used. Within these documentation comments, tags may be used to define the documentation structure.</p>
+<h2 id="code-instrumentation">Code Instrumentation</h2>
+<p>Code Instrumentation refers, among other things, to an ability to monitor, measure, and diagnose errors. In short, we'll call them debug messages or log messages.</p>
+<p>By far, the best logging framework available is <a href="https://github.com/OraOpenSource/Logger" target="_blank">Logger</a> from <a href="https://github.com/OraOpenSource/" target="_blank">OraOpenSource</a>.</p>
+<p>Consider using logger calls <strong>instead</strong> of comments when the information will, explain the logic, help diagnose errors, and monitor execution flow.</p>
+<p>For example:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">procedure</span> <span class="n">verify_valid_auth</span>
+<span class="k">is</span>
+  <span class="n">l_scope</span>  <span class="n">logger_logs</span><span class="p">.</span><span class="k">scope</span><span class="o">%</span><span class="k">type</span> <span class="p">:</span><span class="o">=</span> <span class="n">k_scope_prefix</span> <span class="o">||</span> <span class="s1">&#39;verify_valid_auth&#39;</span><span class="p">;</span>
+<span class="k">begin</span>
+  <span class="n">logger</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;BEGIN&#39;</span><span class="p">,</span> <span class="n">l_scope</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="n">is_token_expired</span> <span class="k">then</span>
+<span class="hll">    <span class="n">logger</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Time to renew the expired token, and set headers.&#39;</span><span class="p">,</span> <span class="n">l_scope</span><span class="p">);</span>
+</span>    <span class="n">hubspot_auth</span><span class="p">;</span>
+  <span class="k">else</span>
+<span class="hll">    <span class="n">logger</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;We have a good token, set headers.&#39;</span><span class="p">,</span> <span class="n">l_scope</span><span class="p">);</span>
+</span>    <span class="n">set_rest_headers</span><span class="p">;</span>
+  <span class="k">end</span> <span class="k">if</span><span class="p">;</span> 
+
+  <span class="n">logger</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">,</span> <span class="n">l_scope</span><span class="p">);</span>
+
+<span class="k">exception</span>
+  <span class="k">when</span> <span class="n">OTHERS</span> <span class="k">then</span>
+    <span class="n">logger</span><span class="p">.</span><span class="n">log_error</span><span class="p">(</span><span class="s1">&#39;Unhandled Exception&#39;</span><span class="p">,</span> <span class="n">l_scope</span><span class="p">);</span>
+    <span class="n">raise</span><span class="p">;</span>
+<span class="k">end</span> <span class="n">verify_valid_auth</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -2445,7 +2500,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="Introduction to the Insum PL/SQL and SQL Coding Guidelines" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../01-coding-style/" title="General Style" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2454,19 +2509,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Introduction to the Insum PL/SQL and SQL Coding Guidelines
+                General Style
               </span>
             </div>
           </a>
         
         
-          <a href="../../2-naming-conventions/naming-conventions/" title="Naming Conventions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../4-language-usage/1-general/g-1010/" title="G-1010: Try to label your sub blocks." class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Naming Conventions
+                G-1010: Try to label your sub blocks.
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
