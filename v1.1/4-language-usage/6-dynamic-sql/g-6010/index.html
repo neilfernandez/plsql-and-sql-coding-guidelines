@@ -2376,11 +2376,11 @@
    <span class="p">(</span>
        <span class="n">p_collection_name</span> <span class="o">=&gt;</span> <span class="n">k_trx_collection</span>
      <span class="p">,</span> <span class="n">p_query</span>           <span class="o">=&gt;</span>
-           <span class="n">q</span><span class="s1">&#39;[select t.id, &#39;</span><span class="n">Y</span><span class="s1">&#39; include_flag, &#39;</span><span class="n">TRX</span><span class="s1">&#39; type</span>
-<span class="s1">                from px_billing_transactions t</span>
-<span class="s1">                where t.appendix_id = :APPENDIX_ID</span>
-<span class="s1">                  and t.pending_invoice_flag = &#39;</span><span class="n">Y</span><span class="s1">&#39;]&#39;</span>
-     <span class="p">,</span> <span class="n">p_names</span>           <span class="o">=&gt;</span> <span class="n">l_param_names</span>
+<span class="hll">           <span class="n">q</span><span class="s1">&#39;[select t.id, &#39;</span><span class="n">Y</span><span class="s1">&#39; include_flag, &#39;</span><span class="n">TRX</span><span class="s1">&#39; type</span>
+</span><span class="hll"><span class="s1">                from px_billing_transactions t</span>
+</span><span class="hll"><span class="s1">                where t.appendix_id = :APPENDIX_ID</span>
+</span><span class="hll"><span class="s1">                  and t.pending_invoice_flag = &#39;</span><span class="n">Y</span><span class="s1">&#39;]&#39;</span>
+</span>     <span class="p">,</span> <span class="n">p_names</span>           <span class="o">=&gt;</span> <span class="n">l_param_names</span>
      <span class="p">,</span> <span class="n">p_values</span>          <span class="o">=&gt;</span> <span class="n">l_param_values</span>
    <span class="p">);</span>
 <span class="k">end</span><span class="p">;</span>
@@ -2422,12 +2422,12 @@
 <span class="k">is</span>
    <span class="n">k_trx_collection</span> <span class="n">constant</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;TRX_LINES&#39;</span><span class="p">;</span>
 
-   <span class="n">k_sql</span> <span class="n">constant</span> <span class="n">types</span><span class="p">.</span><span class="n">big_string_type</span> <span class="p">:</span><span class="o">=</span> 
-           <span class="n">q</span><span class="s1">&#39;[select t.id, &#39;</span><span class="n">Y</span><span class="s1">&#39; include_flag, &#39;</span><span class="n">TRX</span><span class="s1">&#39; type</span>
-<span class="s1">                from px_billing_transactions t</span>
-<span class="s1">                where t.appendix_id = :APPENDIX_ID</span>
-<span class="s1">                  and t.pending_invoice_flag = &#39;</span><span class="n">Y</span><span class="s1">&#39;]&#39;</span><span class="p">;</span>
-
+<span class="hll">   <span class="n">k_sql</span> <span class="n">constant</span> <span class="n">types</span><span class="p">.</span><span class="n">big_string_type</span> <span class="p">:</span><span class="o">=</span> 
+</span><span class="hll">           <span class="n">q</span><span class="s1">&#39;[select t.id, &#39;</span><span class="n">Y</span><span class="s1">&#39; include_flag, &#39;</span><span class="n">TRX</span><span class="s1">&#39; type</span>
+</span><span class="hll"><span class="s1">                from px_billing_transactions t</span>
+</span><span class="hll"><span class="s1">                where t.appendix_id = :APPENDIX_ID</span>
+</span><span class="hll"><span class="s1">                  and t.pending_invoice_flag = &#39;</span><span class="n">Y</span><span class="s1">&#39;]&#39;</span><span class="p">;</span>
+</span>
    <span class="n">l_param_names</span>             <span class="n">apex_application_global</span><span class="p">.</span><span class="n">vc_arr2</span><span class="p">;</span>
    <span class="n">l_param_values</span>            <span class="n">apex_application_global</span><span class="p">.</span><span class="n">vc_arr2</span><span class="p">;</span>
 <span class="k">begin</span>
@@ -2437,8 +2437,8 @@
    <span class="n">apex_collection</span><span class="p">.</span><span class="n">create_collection_from_query_b</span>
    <span class="p">(</span>
        <span class="n">p_collection_name</span> <span class="o">=&gt;</span> <span class="n">k_trx_collection</span>
-     <span class="p">,</span> <span class="n">p_query</span>           <span class="o">=&gt;</span> <span class="n">k_sql</span>
-     <span class="p">,</span> <span class="n">p_names</span>           <span class="o">=&gt;</span> <span class="n">l_param_names</span>
+<span class="hll">     <span class="p">,</span> <span class="n">p_query</span>           <span class="o">=&gt;</span> <span class="n">k_sql</span>
+</span>     <span class="p">,</span> <span class="n">p_names</span>           <span class="o">=&gt;</span> <span class="n">l_param_names</span>
      <span class="p">,</span> <span class="n">p_values</span>          <span class="o">=&gt;</span> <span class="n">l_param_values</span>
    <span class="p">);</span>
 
