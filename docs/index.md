@@ -2,7 +2,7 @@
 
 SQL and PL/SQL code is fundamentally some of the most important code that Insum writes for our customers and partners. The difference between SQL and PL/SQL that performs well and that doesn't can be the difference between a successful system (our customers and partners) and a huge disappointment (Healthcare.gov's rollout for example, not done by Insum...).
 
-For a PDF version of these guidelines use [ngena-PLSQL-and-SQL-Coding-Guidelines.pdf](ngena-PLSQL-and-SQL-Coding-Guidelines.pdf)
+For a PDF version of these guidelines use [ngena-PLSQL-and-SQL-Coding-Guidelines.pdf](https://github.com/neilfernandez/plsql-and-sql-coding-guidelines/raw/master/ngena-PLSQL-and-SQL-Coding-Guidelines.pdf)
 
 In 2019, Rich Soule of Insum forked these guidelines from the [Trivadis guidelines](https://trivadis.github.io/plsql-and-sql-coding-guidelines/) and changed most of the rules to comply with Insum coding standards and added many new guidelines. New rules were also suggested in the Trivadis Issues, and while many were adopted, some (and some we consider very important) were not.
 
