@@ -8,8 +8,8 @@ COMMAND="/data/tools/run-in-container/mike.sh '${GIT_USERNAME}' '${GIT_EMAIL}' $
 if [ "$1" == "deploy" ]
 then
   # Adding latest PDF to base repo because it looks pretty and it's easy to find
-  echo "Copying latest Insum-PLSQL-and-SQL-Coding-Guidelines.pdf to root repo"
-  cp ${DATA_DIR}/docs/Insum-PLSQL-and-SQL-Coding-Guidelines.pdf ..
+  echo "Copying latest ngena-PLSQL-and-SQL-Coding-Guidelines.pdf to root repo"
+  cp ${DATA_DIR}/docs/ngena-PLSQL-and-SQL-Coding-Guidelines.pdf ..
 fi
 
 docker run -v ${DATA_DIR}:/data -p 8000:8000 --rm -it trivadis/mktools bash -c "${COMMAND}"

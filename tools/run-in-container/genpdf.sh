@@ -23,7 +23,7 @@ function write_file(){
     FILE=$1
     echo "" >> ${TARGET_DIR}/docs/index.md
     sed -e 's/..\/image/image/g' ${DATA_DIR}/docs/${FILE} | \
-        sed -e 's|Insum-PLSQL-and-SQL-Coding-Guidelines.pdf||g' | \
+        sed -e 's|ngena-PLSQL-and-SQL-Coding-Guidelines.pdf||g' | \
         sed -e 's/&#10008;/X/g' >> ${TARGET_DIR}/docs/index.md
 }
 
@@ -60,6 +60,7 @@ function convert_to_pdf(){
     fix_footnote_links
     wkhtmltopdf --javascript-delay 3000 \
                 --outline-depth 6 \
+                --enable-local-file-access \
                 --outline \
                 --print-media-type \
                 --margin-top 10 \
@@ -75,7 +76,7 @@ function convert_to_pdf(){
                 cover ../docs/cover.html \
                 toc \
                 --xsl-style-sheet stylesheets/toc.xsl \
-                index.html ${DATA_DIR}/docs/Insum-PLSQL-and-SQL-Coding-Guidelines.pdf
+                index.html ${DATA_DIR}/docs/ngena-PLSQL-and-SQL-Coding-Guidelines.pdf
 }
 
 DATA_DIR="$(cd "$(dirname "${0}")/../.." && pwd)"
