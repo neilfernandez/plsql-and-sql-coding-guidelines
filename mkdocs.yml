@@ -30,10 +30,10 @@ markdown_extensions:
 extra:
   guideline_version: 1.1
   social:
-    - type: github-alt
-      link: https://github.com/insum-labs
-    - type: twitter
-      link: https://twitter.com/insumsolutions
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/neilfernandez
+    # - icon: fontawesome/brands/twitter
+    #   link: https://twitter.com/insumsolutions
   search:
       language: 'en, fr, es'
 
