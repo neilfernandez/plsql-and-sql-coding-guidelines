@@ -11,8 +11,10 @@ theme:
   logo: images/ngena-logo.png
   favicon: images/favicon.ico
   palette:
-    primary: 'light-green'
-    accent: 'green'
+    scheme: slate
+    primary: 'deep purple'
+    accent: 'indigo'
+
 
 extra_css:
   - 'stylesheets/extra.css'
